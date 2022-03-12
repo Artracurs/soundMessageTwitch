@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
   <script src="./tmi.min.js"></script>
   <script src="./jquery-3.6.0.min.js"></script>
+
   <title>Message sound alert</title>
 </head>
+
 <body>
-  <audio id="myAudioElement" controls autoplay>
-    <source id="myAudioElement" src="./me-too-603.mp3" type="audio/mpeg">
-  </audio>
+  <div class="ausource">
+    <audio id="myaudio" controls autoplay>
+      <source id="myaudio" src="./me-too-603.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+  
+  <div id="text">
+    <div id="nick"></div>
+    <div id="msg"></div>
+  </div>
   <script src="./bottwitch.js"></script>
 </body>
+
 </html>
