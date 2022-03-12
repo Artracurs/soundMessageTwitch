@@ -1,24 +1,23 @@
 const client = new tmi.Client({
-	channels: [ 'itnarog' ]
+  channels: ["itnarog"],
 });
 
 client.connect();
 
-client.on('message', (channel, tags, message, self) => {
-	console.log(`${tags['display-name']}: ${message}`);
+$("#myaudio")[0].play();
 
-	const date = new Date()
-	const firstMsgDate = [date.getFullYear(), date.getMonth(), date.getDay()]
+client.on("message", (channel, tags, message, self) => {
+  console.log(`${tags["display-name"]}: ${message}`);
 
-	if (localStorage.getItem(`${tags['display-name']}`) === null ) {
-		$("#myaudio")[0].play();
-		localStorage.setItem(`${tags['display-name']}`, firstMsgDate.toString())
-	}
+  if (localStorage.getItem(`* ${tags["display-name"]}`) === null) {
+    $("#myaudio")[0].play();
+    localStorage.setItem(`* ${tags["display-name"]}`, Date().toString());
+  }
 
-	const uy = `${tags['display-name']}: ${message}\n`
-	const old = document.getElementById("nick").innerText
+  const uy = `${tags["display-name"]}: ${message}\n`;
+  const old = document.getElementById("nick").innerText;
 
-	document.getElementById("nick").innerText = uy
-	document.getElementById("nick").innerText += old
-	
+  document.getElementById("nick").innerText = uy;
+  document.getElementById("nick").innerText += old;
+
 });
