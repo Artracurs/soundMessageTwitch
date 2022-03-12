@@ -15,4 +15,10 @@ client.on('message', (channel, tags, message, self) => {
 		localStorage.setItem(`${tags['display-name']}`, firstMsgDate.toString())
 	}
 
+	const uy = `${tags['display-name']}: ${message}\n`
+	const old = document.getElementById("nick").innerText
+
+	document.getElementById("nick").innerText = uy
+	document.getElementById("nick").innerText += old
+	
 });
