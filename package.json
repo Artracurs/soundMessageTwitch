@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "express": "^4.17.3"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "soundmessagetwitch",
+  "description": "1. Run index.html",
+  "version": "1.0.0",
+  "main": "bottwitch.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Artracurs/soundMessageTwitch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Artracurs/soundMessageTwitch/issues"
+  },
+  "homepage": "https://github.com/Artracurs/soundMessageTwitch#readme"
 }
