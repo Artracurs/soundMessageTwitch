@@ -8,7 +8,7 @@
   "name": "soundmessagetwitch",
   "description": "1. Run index.html",
   "version": "1.0.0",
-  "main": "bottwitch.js",
+  "main": "server.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
