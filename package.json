@@ -3,7 +3,7 @@
     "express": "^4.17.3"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "name": "soundmessagetwitch",
   "description": "1. Run index.html",
