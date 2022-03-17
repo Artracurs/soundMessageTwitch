@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 function axer() {
-  return axios('http://www.myinstants.com/instant/talking-ben-yes-46136/', {
+  return axios('https://www.myinstants.com/instant/talking-ben-yes-46136/', {
     headers: {
       method: 'OPTIONS',
       mode: 'no-cors',
