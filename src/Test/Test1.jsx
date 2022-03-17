@@ -6,7 +6,7 @@ const url2 = "https://www.myinstants.com/instant/talking-ben-yes-46136/"
 async function axer() {
   let resp = await fetch(url2, {
     method: 'GET',
-    mode: 'cors',
+    mode: 'no-cors',
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET',
