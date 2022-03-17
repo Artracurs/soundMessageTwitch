@@ -3,7 +3,7 @@ import axios from 'axios';
 function axer() {
   return axios('https://www.myinstants.com/instant/talking-ben-yes-46136/', {
     headers: {
-      method: 'OPTIONS',
+      method: 'GET',
       mode: 'no-cors',
       headers: {
         'Access-Control-Allow-Origin': '*',
