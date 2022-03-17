@@ -5,7 +5,7 @@ const tmi = require("tmi.js");
 let date = new Date()
 
 const client = new tmi.Client({
-  channels: ["itnarog"],
+  channels: ["uber_taxi_"],
 });
 
 let ggJson = ''

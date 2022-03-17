@@ -1,24 +1,32 @@
-import axios from "axios";
-
-const xhr = new XMLHttpRequest()
+import axios from 'axios';
 
 function axer() {
-  const geturl = document.getElementById("owwop").src
-
-  xhr.open("GET", "https://www.myinstants.com/instant/cute-uwu-73482/")
-  xhr.setRequestHeader('X-PINGOTHER', 'pingpong');
-  xhr.setRequestHeader('Content-Type', 'application/xml');
-  xhr.send()
-
-  xhr.onload = () => {
-    console.log(xhr.status)
-  }
+  return axios('http://www.myinstants.com/instant/talking-ben-yes-46136/', {
+    headers: {
+      method: 'OPTIONS',
+      mode: 'no-cors',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS'
+      },
+      withCredentials: true,
+      credentials: 'same-origin',
+    },
+  })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
 }
+
 
 const Test1 = () => {
   return (<div>
     <h1></h1>
-    {/* <button onClick={axer}>Axer</button> */}
+    <button onClick={axer}>Axer</button>
     {/* <iframe id="owwop" width="110" height="200" src="https://www.myinstants.com/instant/pussy-meme/embed/" frameborder="0" scrolling="no"></iframe> */}
   </div>);
 }
