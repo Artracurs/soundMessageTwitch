@@ -3,6 +3,8 @@ import Test1 from "../Test/Test1";
 import s from "./Main.module.scss"
 import Player, { PlayAudio } from "../AudioPlayer/Player";
 import { useState } from 'react'
+import MainCenter from "./MainCenter";
+import { v4 as uuidv4 } from 'uuid';
 
 let date = new Date()
 const elements = ['a', 'b', 'c', 'd']
@@ -11,12 +13,9 @@ export const Main = (props) => {
 
   return (
     <div className={s.container}>
-      <h6></h6>
-      
       <Table striped bordered hover variant="dark">
         <thead>
           <tr>
-            <th>Mute</th>
             <th>#</th>
             <th>NickName</th>
             <th>Sound</th>
@@ -25,9 +24,10 @@ export const Main = (props) => {
           </tr>
         </thead>
         <tbody>
-        <Lines />
+        <Lines key={uuidv4()} />
         </tbody>
       </Table >
+      <MainCenter />
     </div>
   );
 }
@@ -38,7 +38,6 @@ export const Lines = (props) => {
 
   return (
     <tr>
-      <td><FormCheck onClick={Lines}></FormCheck></td>
       <td>1</td>
       <td>Nickname</td>
       <td>
@@ -46,11 +45,13 @@ export const Lines = (props) => {
           <option onChange={()=>console.log("subscriber")} value="subscriber">Subscriber</option>
           <option onChange={()=>console.log("moderator")} value="moderator">Moderator</option>
           <option onChange={()=>console.log("follower")} value="follower">Follower</option>
+          <option onChange={()=>console.log("none")} value="none">None</option>
         </Form.Select>
       </td>
       <td>{msg}</td>
       <td>{date.toUTCString()}</td>
     </tr>
+    
   )
 }
 

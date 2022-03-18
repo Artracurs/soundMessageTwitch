@@ -1,7 +1,7 @@
 import { Container, Navbar, Nav, Form } from "react-bootstrap-v5";
 import st from "./Header.module.scss"
 import { Link, NavLink, Route, Routes } from "react-router-dom"
-import Player, { PlayAudio } from "../AudioPlayer/Player";
+import Player, { PlayAudio, ToggleSound } from "../AudioPlayer/Player";
 import Grapher from "../Grapher/Grapher";
 import HomePage from "../Pages/HomePage";
 import SoundPage from "../Pages/SoundPage";
@@ -33,7 +33,7 @@ const Header = () => {
     }
     let ff = document.getElementById("muter")
     if (ff.checked == true){
-      PlayAudio()
+      ToggleSound()
       console.log("LOG >>> Global Sound On")
       muteLabel.innerText = "Sound On"
     } else {
@@ -49,12 +49,12 @@ const Header = () => {
           <Navbar.Brand to="home">@ITNaRog</Navbar.Brand>
           <Nav className="me-auto">
             <NavLink className={setActive} to="home">Home</NavLink>
-            <NavLink className={setActive} to="sound">Sound</NavLink>
+            <NavLink className={setActive} to="sound">Sounds Library</NavLink>
             <NavLink className={setActive} to="pomodoro">Pomodoro</NavLink>
           </Nav>
           <Form className={st.volumeController}>
             <PlayerHeader />
-            <Form.Check id="muter" value="" inline onChange={mute} defaultChecked={false} type="switch" />
+            <Form.Check className={st.checker} id="muter" value="" inline onChange={mute} defaultChecked={false} type="switch" />
             <span className={st.vlmLabel} value="c" id="muteLabel">Not Active</span>
           </Form>
         </Container>

@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <h4></h4>
       <Header />
-      {/* <Bottw key={uuidv4()} /> */}
+      <Bottw />
       {/* <Player /> */}
       <Routes>
         <Route path="/" to="/home" element={<HomePage />} />

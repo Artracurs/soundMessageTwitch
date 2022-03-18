@@ -1,4 +1,4 @@
-.container {  
+.container {
   margin: 0 auto;
   width: 1200px;
 }
@@ -6,19 +6,26 @@
 .active {
   margin: 5px;
   text-decoration: none;
-  color: #0d6efd;
-  background: rgb(224, 171, 73);
+  color: #0d6dfd;
+  background: rgb(255, 255, 255);
   padding: 0 15px 0 15px;
+  height: 25px;
+  border-radius: 5px;
 }
 
 .link {
+  border-radius: 5px;
   margin: 5px;
+  height: 25px;
   text-decoration: none;
-  color: rgb(0, 0, 0);
-  background: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  background: #0d6dfd;
   padding: 0 15px 0 15px;
 }
 .volumeController {
   margin-right: 10px;
 }
 
+.checker {
+  margin-left: 5px;
+}

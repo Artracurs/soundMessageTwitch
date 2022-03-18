@@ -15,6 +15,12 @@ export const PlayAudio = () => {
   audio.play();
 };
 
+export const ToggleSound = () => {
+  const toggleAudio = new Audio(knob)
+  toggleAudio.volume = 0.5;
+  toggleAudio.play();
+};
+
 const Player = (props) => {
   const [rangeval, setRangeval] = useState(localStorage.getItem("volume"));
   const [act, setAct] = useState(localStorage.getItem("volumeStatus"));

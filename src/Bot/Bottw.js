@@ -1,5 +1,4 @@
-import bitok from "../AudioPlayer/bitok.mp3";
-
+import { useState } from "react";
 import s from "./Bottw.module.scss"
 import { PlayAudio } from "../AudioPlayer/Player";
 const tmi = require("tmi.js");
@@ -13,12 +12,14 @@ let ggJson = '...'
 
 client.connect();
 
+const ge = ""
+
+
 const Bottw = (props) => {
   client.on("message", async (channel, tags, message, self) => {
     let data = {Date: date, stdSound: "Follower"}
-
-    let ffd = document.getElementById("muter")
-    console.log("ffd")
+    // let ffd = document.getElementById("muter")
+    // console.log("ffd")
     PlayAudio()
 
     if(localStorage.getItem(tags["display-name"])) {
@@ -31,6 +32,8 @@ const Bottw = (props) => {
   });
 
   return <div className={s.container}>
+    <h4>{ge}</h4>
+
   </div>;
 };
 

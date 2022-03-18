@@ -8,9 +8,9 @@ import Bottw from "../Bot/Bottw";
 const SoundPage = () => {
 
   return (<div>
-    {/* <Player /> */}
-    {/* <input type="url" name="url" id="" /> */}
+    <Player />
+    <input type="url" name="url" id="" />
     </div>);
 }
 
-      export default SoundPage;
+export default SoundPage;
