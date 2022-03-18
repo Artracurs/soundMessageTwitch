@@ -5,9 +5,7 @@ import Player, { PlayAudio } from "../AudioPlayer/Player";
 import { useState } from 'react'
 import MainCenter from "./MainCenter";
 import { v4 as uuidv4 } from 'uuid';
-
-let date = new Date()
-const elements = ['a', 'b', 'c', 'd']
+import { Lines } from "./Lines";
 
 export const Main = (props) => {
 
@@ -24,35 +22,13 @@ export const Main = (props) => {
           </tr>
         </thead>
         <tbody>
-        <Lines key={uuidv4()} />
+          <Lines />
+          <Lines />
         </tbody>
       </Table >
       <MainCenter />
     </div>
   );
-}
-
-
-export const Lines = (props) => {
-  const [msg, setMsg] = useState(0)
-
-  return (
-    <tr>
-      <td>1</td>
-      <td>Nickname</td>
-      <td>
-        <Form.Select size="sm" aria-label="Default select example">
-          <option onChange={()=>console.log("subscriber")} value="subscriber">Subscriber</option>
-          <option onChange={()=>console.log("moderator")} value="moderator">Moderator</option>
-          <option onChange={()=>console.log("follower")} value="follower">Follower</option>
-          <option onChange={()=>console.log("none")} value="none">None</option>
-        </Form.Select>
-      </td>
-      <td>{msg}</td>
-      <td>{date.toUTCString()}</td>
-    </tr>
-    
-  )
 }
 
 export default Main;

@@ -10,6 +10,7 @@ import PomodoroPage from "../Pages/PomodoroTimer";
 import PlayerHeader from "../AudioPlayer/PlayerHeader";
 
 const Header = () => {
+  const headerChannelName = localStorage.getItem("ChannelName")
   const setActive = ({isActive}) => isActive ? st.active : st.link;
 
   const mute = () => {
@@ -46,11 +47,12 @@ const Header = () => {
     <div className={st.container}>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand to="home">@ITNaRog</Navbar.Brand>
+          <Navbar.Brand to="home">@{headerChannelName}</Navbar.Brand>
           <Nav className="me-auto">
-            <NavLink className={setActive} to="home">Home</NavLink>
-            <NavLink className={setActive} to="sound">Sounds Library</NavLink>
+            <NavLink className={setActive} to="home">Followers</NavLink>
+            <NavLink className={setActive} to="sound">Sound Library</NavLink>
             <NavLink className={setActive} to="pomodoro">Pomodoro</NavLink>
+            <NavLink className={setActive} to="settings">Channel Settings</NavLink>
           </Nav>
           <Form className={st.volumeController}>
             <PlayerHeader />

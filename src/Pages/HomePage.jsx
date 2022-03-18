@@ -6,8 +6,6 @@ import Header from "../Header/Header";
 import { Card } from "react-bootstrap-v5";
 import { Button } from "bootstrap";
 
-console.log(uuidv4())
-
 const HomePage = () => {
   return ( <div>
     {/* <Header key={uuidv4()}/> */}

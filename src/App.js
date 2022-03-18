@@ -1,13 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.module.css";
-import Bottw from "./Bot/Bottw";
-import { v4 as uuidv4 } from "uuid";
 import Header from "./Header/Header";
-import Player from "./AudioPlayer/Player";
 import HomePage from "./Pages/HomePage";
 import SoundPage from "./Pages/SoundPage";
 import PomodoroPage from "./Pages/PomodoroTimer";
+import SettingsPage from "./Pages/SettingPage";
+import Bottw from "./Bot/Bottw";
 
 function App() {
   return (
@@ -21,6 +20,7 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/sound" element={<SoundPage />} />
         <Route path="/pomodoro" element={<PomodoroPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
       </Routes>
     </div>
   );

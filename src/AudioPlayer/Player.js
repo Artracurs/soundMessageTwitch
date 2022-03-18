@@ -6,24 +6,25 @@ import { v4 as uuidv4 } from "uuid";
 import s from "./Player.module.scss";
 import { useState, useEffect } from "react";
 
-// const audio = new Audio(knob);
+
 const volume = localStorage.getItem("volume");
 
+const audio = new Audio(knob)
+const toggleAudio = new Audio(knob)
+toggleAudio.volume = 0.5;
+audio.volume = localStorage.getItem("volume") / 100;
+
 export const PlayAudio = () => {
-  const audio = new Audio(knob)
-  audio.volume = localStorage.getItem("volume") / 100;
   audio.play();
 };
 
 export const ToggleSound = () => {
-  const toggleAudio = new Audio(knob)
-  toggleAudio.volume = 0.5;
   toggleAudio.play();
 };
 
 const Player = (props) => {
   const [rangeval, setRangeval] = useState(localStorage.getItem("volume"));
-  const [act, setAct] = useState(localStorage.getItem("volumeStatus"));
+  // const [act, setAct] = useState(localStorage.getItem("volumeStatus"));
 
   return (
     <div className={s.container}>

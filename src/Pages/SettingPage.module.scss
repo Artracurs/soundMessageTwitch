@@ -1,0 +1,24 @@
+.container {
+  color: white;
+  margin: 0 auto;
+  width: 500px;
+  background: rgb(33, 37, 41);
+  padding: 20px 40px 20px 40px;
+  border-radius: 5px;
+}
+
+.tmi {
+  display: grid;
+  grid-template-columns: 100px 2fr;
+  gap: 10px;
+}
+
+.btnOK {
+  width: 100px;
+  margin-top: 10px;
+}
+
+h6 {
+  margin-top: 20px;
+  color: rgb(99, 99, 99);
+}
