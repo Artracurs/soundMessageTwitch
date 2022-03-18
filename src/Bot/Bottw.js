@@ -1,14 +1,15 @@
+import bitok from "../AudioPlayer/bitok.mp3";
+
 import s from "./Bottw.module.scss"
 import { PlayAudio } from "../AudioPlayer/Player";
 const tmi = require("tmi.js");
-
 let date = new Date()
 
 const client = new tmi.Client({
   channels: ["uber_taxi_"],
 });
 
-let ggJson = ''
+let ggJson = '...'
 
 client.connect();
 
@@ -16,7 +17,10 @@ const Bottw = (props) => {
   client.on("message", async (channel, tags, message, self) => {
     let data = {Date: date, stdSound: "Follower"}
 
-    PlayAudio();
+    let ffd = document.getElementById("muter")
+    console.log("ffd")
+    PlayAudio()
+
     if(localStorage.getItem(tags["display-name"])) {
       console.log("old user")
     } else {

@@ -1,7 +1,7 @@
 import { Modal, Button, Table, NavDropdown, Form, FormCheck } from "react-bootstrap-v5";
 import Test1 from "../Test/Test1";
 import s from "./Main.module.scss"
-import { PlayAudio } from "../AudioPlayer/Player";
+import Player, { PlayAudio } from "../AudioPlayer/Player";
 import { useState } from 'react'
 
 let date = new Date()
@@ -11,7 +11,8 @@ export const Main = (props) => {
 
   return (
     <div className={s.container}>
-      <Test1 />
+      <h6></h6>
+      
       <Table striped bordered hover variant="dark">
         <thead>
           <tr>

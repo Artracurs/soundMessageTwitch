@@ -1,61 +1,64 @@
 import { Container, Navbar, Nav, Form } from "react-bootstrap-v5";
-import s from "./Header.module.scss"
-import { Link, Route, Routes } from "react-router-dom"
+import st from "./Header.module.scss"
+import { Link, NavLink, Route, Routes } from "react-router-dom"
 import Player, { PlayAudio } from "../AudioPlayer/Player";
 import Grapher from "../Grapher/Grapher";
 import HomePage from "../Pages/HomePage";
 import SoundPage from "../Pages/SoundPage";
 import { v4 as uuidv4 } from 'uuid';
 import PomodoroPage from "../Pages/PomodoroTimer";
-
+import PlayerHeader from "../AudioPlayer/PlayerHeader";
 
 const Header = () => {
+  const setActive = ({isActive}) => isActive ? st.active : st.link;
+
   const mute = () => {
     let ranger = document.getElementById("ranger")
-    let muter = document.getElementById("muteLabel")
+    let muteLabel = document.getElementById("muteLabel")
 
-    const getVol = localStorage.getItem("volume")
-    const getOldVol = localStorage.getItem("oldVolume")
-    const oldVol = localStorage.setItem("oldVolume", getVol)
+    let getVol = localStorage.getItem("volume")
+    let getOldVol = localStorage.getItem("oldVolume")
+    let oldVol = localStorage.setItem("oldVolume", getVol)
     if (getVol === '0') {
-      ranger.value = getOldVol
-      ranger.disabled = false
-      muter.innerHTML = "Unmute"
+      // ranger.value = getOldVol
+      // ranger.disabled = true
       localStorage.setItem("volume", getOldVol)
       localStorage.setItem("volumeStatus", 1)
     }
     if (getVol != '0') {
-      ranger.value = 0
-      ranger.disabled = true
-      muter.innerHTML = "Muted"
+      // ranger.value = 0
+      // ranger.disabled = false
       localStorage.setItem('volume', 0)
       localStorage.setItem("volumeStatus", 0)
     }
+    let ff = document.getElementById("muter")
+    if (ff.checked == true){
+      PlayAudio()
+      console.log("LOG >>> Global Sound On")
+      muteLabel.innerText = "Sound On"
+    } else {
+      muteLabel.innerText = "Not Active"
+      console.log("LOG >>> Global Sound Off")
+    } 
   }
 
   return (
-    <div className={s.container}>
+    <div className={st.container}>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/home">@ITNaRog</Navbar.Brand>
-          <Nav>
-            <Nav.Link as={Link} to="/"></Nav.Link>
-            <Nav.Link as={Link} to="home">Home</Nav.Link>
-            <Nav.Link as={Link} to="sound">Sound</Nav.Link>
-            <Nav.Link as={Link} to="pomodoro">Pomodoro</Nav.Link>
+          <Navbar.Brand to="home">@ITNaRog</Navbar.Brand>
+          <Nav className="me-auto">
+            <NavLink className={setActive} to="home">Home</NavLink>
+            <NavLink className={setActive} to="sound">Sound</NavLink>
+            <NavLink className={setActive} to="pomodoro">Pomodoro</NavLink>
           </Nav>
-          <Form>
-            <Form.Check onClick={PlayAudio} id="muter" inline onChange={mute} defaultChecked={localStorage.getItem("volumeStatus")} type="switch" />
-            <span value="c" id="muteLabel">Muted</span>
+          <Form className={st.volumeController}>
+            <PlayerHeader />
+            <Form.Check id="muter" value="" inline onChange={mute} defaultChecked={false} type="switch" />
+            <span className={st.vlmLabel} value="c" id="muteLabel">Not Active</span>
           </Form>
         </Container>
       </Navbar>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/sound" element={<SoundPage />} />
-        <Route path="/pomodoro" element={<PomodoroPage />} />
-      </Routes>
     </div>
   )
 }

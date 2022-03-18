@@ -1,10 +1,12 @@
+import st from "./PomodoroPage.module.scss"
+
 import { Card, Button, Form } from "react-bootstrap-v5";
 
 const PomodoroPage = () => {
   let releaseDay = 30
   let today = new Date()
   
-  return (<div>
+  return (<div className={st.container}>
     <h6></h6>
     <Card className="bg-dark text-white">
       <Card.Body>
