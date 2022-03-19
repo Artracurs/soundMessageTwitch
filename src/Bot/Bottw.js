@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import s from "./Bottw.module.scss";
 import { PlayAudio } from "../AudioPlayer/Player";
 import tmi from "tmi.js";
@@ -20,21 +20,34 @@ const bot = new tmi.Client({
   },
   channels: [`${localStorage.getItem("ChannelName")}`],
 });
-bot
-  .connect(`${localStorage.getItem("ChannelName")}`)
-  .then((date) => {
-    console.log(date);
-    // localStorage.setItem("ConectionStatus", "Connected")
-    // alert(date)
+
+
+bot.connect().then(() => {
+  bot.join(`${localStorage.getItem("ChannelName")}`).then((info) => {
+    const fer = localStorage.getItem("ChannelName")
+    if (info[0] === (`#${fer}`)){
+      localStorage.setItem("ConectionStatus", "Connected")
+      Sucsess(info)
+    } 
   })
-  .catch((err) => {
-    console.log("Error!");
-    localStorage.setItem("ConectionStatus", "Disconected");
-    // alert(err);
-  });
+  .catch((error) =>{
+    localStorage.setItem("ConectionStatus", "Disconnected")
+    Sucsess(error)
+  })
+});
+
+export async function Sucsess(st){
+  console.log(st)
+  if (st === 'No response from Twitch.'){
+    return await false
+  } else {
+    return await true
+  } 
+}
 
 const Bottw = () => {
   useEffect(() => {
+    Sucsess()
     bot.on("message", (channel, tags, message, self) => {
       let data = { Date: date, stdSound: "Follower" };
       let ffd = document.getElementById("muter");

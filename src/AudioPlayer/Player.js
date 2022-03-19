@@ -6,7 +6,6 @@ import { v4 as uuidv4 } from "uuid";
 import s from "./Player.module.scss";
 import { useState, useEffect } from "react";
 
-
 const volume = localStorage.getItem("volume");
 
 const audio = new Audio(knob)
