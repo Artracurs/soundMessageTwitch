@@ -3,6 +3,9 @@ import s from "./Bottw.module.scss";
 import { PlayAudio } from "../AudioPlayer/Player";
 import tmi from "tmi.js";
 import SettingsPage from "../Pages/SettingPage";
+import { Sucsess } from "../Pages/SettingPage";
+import axios from "axios";
+
 
 let date = new Date();
 let ggJson = "...";
@@ -12,42 +15,64 @@ const audio = new Audio(
 );
 
 const bot = new tmi.Client({
-  options: { debug: true },
+  options: { debug: false },
   identity: {
     username: `${localStorage.getItem("ChannelName")}`,
     password: `${localStorage.getItem("Token")}`,
-    // password: 'oauth:lg3nd4ouq7t2rnkcuo838gfyjprxbb'
   },
   channels: [`${localStorage.getItem("ChannelName")}`],
 });
 
 
+
 bot.connect().then(() => {
-  bot.join(`${localStorage.getItem("ChannelName")}`).then((info) => {
-    const fer = localStorage.getItem("ChannelName")
-    if (info[0] === (`#${fer}`)){
-      localStorage.setItem("ConectionStatus", "Connected")
-      Sucsess(info)
-    } 
-  })
-  .catch((error) =>{
-    localStorage.setItem("ConectionStatus", "Disconnected")
-    Sucsess(error)
-  })
+  bot
+    .join(`${localStorage.getItem("ChannelName")}`)
+    .then((info) => {
+      const fer = localStorage.getItem("ChannelName");
+      if (info[0] === `#${fer}`) {
+        localStorage.setItem("ConectionStatus", "Connected");
+        localStorage.setItem("Info", info)
+        Sucsess(info);
+      }
+    })
+    .catch((error) => {
+      localStorage.setItem("ConectionStatus", "Disconnected");
+      localStorage.setItem("Info", error)
+      Sucsess(error);
+    });
 });
 
-export async function Sucsess(st){
-  console.log(st)
-  if (st === 'No response from Twitch.'){
-    return await false
-  } else {
-    return await true
-  } 
-}
+export const Disconnect = () => {
+  // localStorage.setItem("ChannelName", "")
+  // bot
+  //   .disconnect()
+  //   .then((data) => {
+  //     console.log(data);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
+};
+
+// export async function Sucsess(st){
+//   console.log(st)
+//   if (st === 'No response from Twitch.'){
+//     return await false
+//   } else {
+//     return await true
+//   }
+// }
 
 const Bottw = () => {
+
+  const [msg, setMsg] = useState(0)
+
+
+
+
+
   useEffect(() => {
-    Sucsess()
     bot.on("message", (channel, tags, message, self) => {
       let data = { Date: date, stdSound: "Follower" };
       let ffd = document.getElementById("muter");
@@ -66,7 +91,7 @@ const Bottw = () => {
 
   return (
     <div className={s.container}>
-      <h4></h4>
+      {/* <h4>{msg}</h4> */}
     </div>
   );
 };

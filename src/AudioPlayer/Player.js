@@ -6,6 +6,12 @@ import { v4 as uuidv4 } from "uuid";
 import s from "./Player.module.scss";
 import { useState, useEffect } from "react";
 
+
+if (localStorage.getItem("volume") === null){
+  localStorage.setItem("volume", 0)
+  console.log(localStorage.getItem("volume"))
+}
+
 const volume = localStorage.getItem("volume");
 
 const audio = new Audio(knob)
@@ -27,7 +33,7 @@ const Player = (props) => {
 
   return (
     <div className={s.container}>
-      <div>
+      {/* <div>
         <h4 value="csa">Volume = {localStorage.getItem("volume")} %</h4>
         <Form.Range
           type="range"
@@ -45,7 +51,7 @@ const Player = (props) => {
           {" "}
           Play{" "}
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 };

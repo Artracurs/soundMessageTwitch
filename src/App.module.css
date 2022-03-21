@@ -1,8 +1,10 @@
 body {
   width: 0 auto;
   text-align: center;
-  background: rgb(104, 104, 104);
+  background: radial-gradient(#270f22, #041416);
   color: white;
+  min-height: 99vh;
+  min-width: 99vw;
 }
 
 

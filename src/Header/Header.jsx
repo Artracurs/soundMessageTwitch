@@ -8,12 +8,13 @@ import SoundPage from "../Pages/SoundPage";
 import { v4 as uuidv4 } from 'uuid';
 import PomodoroPage from "../Pages/PomodoroTimer";
 import PlayerHeader from "../AudioPlayer/PlayerHeader";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const headerChannelName = localStorage.getItem("ChannelName")
-  const setActive = ({isActive}) => isActive ? st.active : st.link;
+  const setActive = ({ isActive }) => isActive ? st.active : st.link;
 
-  const mute = () => {
+  const Mute = () => {
     let ranger = document.getElementById("ranger")
     let muteLabel = document.getElementById("muteLabel")
 
@@ -43,6 +44,48 @@ const Header = () => {
     } 
   }
 
+
+  let ranger = document.getElementById("ranger")
+  let muteLabel = document.getElementById("muteLabel")
+  let getVol = localStorage.getItem("volume")
+  let getOldVol = localStorage.getItem("oldVolume")
+  let oldVol = localStorage.setItem("oldVolume", getVol)
+  let ff = document.getElementById("muter")
+
+  // const Mute = () => {
+    
+  // }
+
+  // useEffect(() => {
+  //   document.querySelector("#settingChannelButton").style.color = "red"
+  //   if (localStorage.getItem("ConectionStatus") === "Connected") {
+  //     document.querySelector("#settingChannelButton").style.color = "green"
+  //   }
+  //   if (localStorage.getItem("volumeStatus") === "1") {
+  //     document.getElementById("ranger").value = getOldVol
+
+  //   }
+  //   if (localStorage.getItem("volumeStatus") === "0") {
+  //     document.getElementById("ranger").value = 0
+  //   }
+  //   if (ff.checked === true) {
+  //     // ToggleSound()
+  //     localStorage.setItem("volumeStatus", 1)
+  //     console.log("LOG >>> Global Sound On")
+  //     muteLabel.innerText = "Sound On"
+  //   } else {
+  //     localStorage.setItem("volume", 0)
+  //     muteLabel.innerText = "Not Active"
+  //     localStorage.setItem("volumeStatus", 0)
+  //     console.log("LOG >>> Global Sound Off")
+  //   }
+
+
+
+
+  // })
+
+
   return (
     <div className={st.container}>
       <Navbar bg="dark" variant="dark">
@@ -50,17 +93,20 @@ const Header = () => {
           <Navbar.Brand to="home">@{headerChannelName}</Navbar.Brand>
           <Nav className="me-auto">
             <NavLink className={setActive} to="home">Followers</NavLink>
+            <NavLink className={setActive} to="chat">Links from Chat</NavLink>
             <NavLink className={setActive} to="sound">Sound Library</NavLink>
             <NavLink className={setActive} to="pomodoro">Pomodoro</NavLink>
-            <NavLink className={setActive} to="settings">Channel Settings</NavLink>
+
+            <NavLink className={setActive} to="settings">{<span id="settingChannelButton">●  </span>}Authorisation</NavLink>
           </Nav>
           <Form className={st.volumeController}>
             <PlayerHeader />
-            <Form.Check className={st.checker} id="muter" value="" inline onChange={mute} defaultChecked={false} type="switch" />
+            <Form.Check className={st.checker} id="muter" value="" inline onChange={Mute} defaultChecked={false} type="switch" />
             <span className={st.vlmLabel} value="c" id="muteLabel">Not Active</span>
           </Form>
         </Container>
       </Navbar>
+      <div className={st.underline}></div>
     </div>
   )
 }

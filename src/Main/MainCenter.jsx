@@ -4,8 +4,8 @@ import { Card, Modal, Button, Table, NavDropdown, Form, FormCheck } from "react-
 const MainCenter = () => {
   return (
     <div className={s.container} >
-      <Card className="bg-dark text-white">
-        <Card.Footer className="text-muted">Last Release - Friday March 18, 2022 - ver 0.1</Card.Footer>
+      <Card className="bg-dark ">
+        <Card.Footer className="text-muted">Last Release - Monday March 21, 2022 - ver 0.2</Card.Footer>
       </Card>
     </div>);
 }

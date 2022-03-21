@@ -1,6 +1,7 @@
 .container {
   margin: 0 auto;
   width: 1200px;
+  
 }
 
 .active {
@@ -11,6 +12,9 @@
   padding: 0 15px 0 15px;
   height: 25px;
   border-radius: 5px;
+  box-shadow: 0px 0px 10px 1px #ff000088;
+  // border: 1px solid #cf86b9;
+  // background: linear-gradient(to right, rgb(119, 0, 255), orange);
 }
 
 .link {
@@ -21,11 +25,33 @@
   color: rgb(255, 255, 255);
   background: #0d6dfd;
   padding: 0 15px 0 15px;
+  filter: blur(0px);
 }
 .volumeController {
   margin-right: 10px;
+  padding-bottom: 10px;
 }
 
 .checker {
   margin-left: 5px;
+}
+
+.link:hover
+{
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.5);
+  transform: scale(1.1);
+  color: rgb(255, 255, 255);
+  filter: blur(0px);
+  box-shadow: 0px 0px 10px 1px #ff000088;
+  // border: 1px solid #cf86b9;
+  background: linear-gradient(to right, rgb(119, 0, 255), orange);
+}
+
+.underline {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, rgb(119, 0, 255), orange);
+  box-shadow: 0px 0px 10px 1px #ff000088;
+  
 }

@@ -6,9 +6,8 @@ const PomodoroPage = () => {
   let releaseDay = 30
   let today = new Date()
   
-  return (<div className={st.container}>
-    
-    <Card className="bg-dark text-white">
+  return (<div >
+    <div className={st.container}>
       <Card.Body>
         <Card.Title>The Pomodoro Technique</Card.Title>
         <Card.Text>
@@ -17,7 +16,7 @@ const PomodoroPage = () => {
         <Button onClick={() => { window.open('https://github.com/Artracurs/soundMessageTwitch'); }}>Take part in the development</Button>
       </Card.Body>
       <Card.Footer className="text-muted"> {releaseDay - today.getDate()} days left until release Ver 0.1</Card.Footer>
-    </Card>
+    </div>
   </div>);
 }
 
