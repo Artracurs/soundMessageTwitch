@@ -1,8 +1,6 @@
 import { Button, Form } from "react-bootstrap-v5";
-import bitok from "./bitok.mp3";
-import knob from "./knob.mp3";
-import rington from "./rington.mp3";
-import { v4 as uuidv4 } from "uuid";
+import bitok from "../../AudioPlayer/Audiofiles/bitok.mp3";
+import knob from "../../AudioPlayer/Audiofiles/knob.mp3";
 import s from "./PlayerHeader.module.scss";
 import { useState, useEffect } from "react";
 

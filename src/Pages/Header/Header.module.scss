@@ -74,5 +74,11 @@
 
 .headerButtons {
   display: grid;
-  grid-template-columns: 100px 155px 144px 1fr 180px 1fr;
+  grid-template-columns: 110px 155px 144px 1fr 160px 3fr;
+}
+
+.channelNameText {
+  font-size: 20px;
+  margin: 0 20px 0 20px;
+  color: #ffffff;
 }

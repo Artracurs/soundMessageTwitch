@@ -2,6 +2,7 @@ const express = require("express")
 const tmi = require("../node_modules/tmi.js");
 const PORT = process.env.PORT || 9000
 const app = express()
+const path = require('path')
 
 const bot = new tmi.Client({
   options: { debug: false },
@@ -24,6 +25,8 @@ bot.connect().then(() => {
 });
 
 let getMessage = "";
+
+app.use('/static', express.static(path.join(__dirname, 'public')))
 
 bot.on("message", (channel, tags, message, self) => {
   console.log(message);

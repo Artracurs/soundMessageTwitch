@@ -1,12 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import s from "./Bottw.module.scss";
-import { PlayAudio } from "../AudioPlayer/Player";
+import s from "./Bot.module.scss";
 import tmi from "tmi.js";
-import SettingsPage from "../Pages/SettingPage";
-import { Sucsess } from "../Pages/SettingPage";
-import axios from "axios";
-import uwup from "./uwup.mp3"
-
+import { Sucsess } from "../Pages/Authorisation/AuthorisationPage";
+import uwup from "../AudioPlayer/Audiofiles/uwup.mp3"
 
 let date = new Date();
 let ggJson = "...";

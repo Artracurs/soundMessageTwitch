@@ -2,19 +2,14 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
 import s from "./App.module.scss";
-import Header from "./Header/Header";
-import HomePage from "./Pages/HomePage";
-import SoundPage from "./Pages/SoundPage";
-import PomodoroPage from "./Pages/PomodoroTimer";
-import SettingsPage from "./Pages/SettingPage";
-import Bottw from "./Bot/Bottw";
-import { polyfill } from "react-lifecycles-compat";
-import { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
-import axios from "axios";
-import Clock from "./Test/Clock";
-import Chat from "./Pages/Chat";
-import LinksFromChat from "./Chat/LinksFromChat";
+import Header from "./Pages/Header/HeaderPage";
+import FollowersPage from "./Pages/FollowersPage/FollowersPage";
+import PomodoroPage from "./Pages/Pomodoro/PomodoroTimer";
+import SettingsPage from "./Pages/Authorisation/AuthorisationPage";
+import Bot from "./Bot/Bot";
+import Clock from "./Pages/Clock/Clock";
+import LikesFromChat from "./Pages/LikesFromChat/LinksFromChat";
+import SoundLibrary from "./Pages/SoundLibrary/SoundLibrary";
 
 function App() {
   return (
@@ -25,15 +20,14 @@ function App() {
 
       <h4></h4>
       <Header />
-      <Bottw />
-      {/* <h4></h4> */}
+      <Bot />
       <Clock />
 
       <Routes>
-        <Route path="/" to="/home" element={<HomePage />} />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/chat" element={<Chat />} />
-        <Route path="/sound" element={<SoundPage />} />
+        <Route path="/" to="/home" element={<FollowersPage />} />
+        <Route path="/followers" element={<FollowersPage />} />
+        <Route path="/chat" element={<LikesFromChat />} />
+        <Route path="/sound" element={<SoundLibrary />} />
         <Route path="/pomodoro" element={<PomodoroPage />} />
         <Route path="/settings" element={<SettingsPage />} />
       </Routes>

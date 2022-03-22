@@ -1,7 +1,7 @@
 import { Modal, Button, Table, NavDropdown, Form, FormCheck } from "react-bootstrap-v5";
-import Test1 from "../Test/Clock";
+import Test1 from "../Clock/Clock";
 import s from "./Main.module.scss"
-import Player, { PlayAudio } from "../AudioPlayer/Player";
+import Player, { PlayAudio } from "../../AudioPlayer/Player";
 import { useState } from 'react'
 import MainCenter from "./MainCenter";
 import { v4 as uuidv4 } from 'uuid';

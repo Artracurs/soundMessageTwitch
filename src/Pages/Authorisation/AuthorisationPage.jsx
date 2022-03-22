@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react'
 import st from "./Button_effect.module.scss"
 
 
-import { Disconnect } from '../Bot/Bottw'
 
 export function Sucsess(st) {
   console.log(st)

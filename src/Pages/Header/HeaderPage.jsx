@@ -1,12 +1,8 @@
 import { Container, Navbar, Nav, Form } from "react-bootstrap-v5";
 import st from "./Header.module.scss"
 import { Link, NavLink, Route, Routes } from "react-router-dom"
-import Player, { PlayAudio, ToggleSound } from "../AudioPlayer/Player";
-import HomePage from "../Pages/HomePage";
-import SoundPage from "../Pages/SoundPage";
-import { v4 as uuidv4 } from 'uuid';
-import PomodoroPage from "../Pages/PomodoroTimer";
-import PlayerHeader from "../AudioPlayer/PlayerHeader";
+import Player, { PlayAudio, ToggleSound } from "../../AudioPlayer/Player";
+import PlayerHeader from "./PlayerHeader";
 import { useState, useEffect } from "react";
 
 const Header = () => {
@@ -78,18 +74,12 @@ const Header = () => {
   //     localStorage.setItem("volumeStatus", 0)
   //     console.log("LOG >>> Global Sound Off")
   //   }
-
-
-
-
   // })
-
 
   return (
     <div className={st.container}>
       <Navbar bg="dark" variant="dark">
-          <div style={{width: "20px"}}></div>
-          <div to="home">@{headerChannelName}</div>
+          <div className={st.channelNameText} to="home">@{headerChannelName}</div>
           <div className={st.headerButtons}>
             <NavLink className={setActive} to="home">Followers</NavLink>
             <NavLink className={setActive} to="chat">Links from Chat</NavLink>

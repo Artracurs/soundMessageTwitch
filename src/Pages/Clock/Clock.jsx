@@ -1,9 +1,5 @@
-import axios from 'axios';
-import React, { useState, useEffect, Component } from 'react';
-import { v4 as uuidv4 } from "uuid";
-import ReactDOM from "react-dom"
 import s from "./Clock.module.scss"
-
+import React, { useState, useEffect, Component } from 'react';
 
 class Clock extends React.Component {
   constructor(props) {
@@ -30,7 +26,7 @@ class Clock extends React.Component {
   render() {
     return (
       <div>
-        <h2>{this.state.date.toLocaleTimeString()}</h2>
+        <h2 className={s.clock} >{this.state.date.toLocaleTimeString()}</h2>
       </div>
     )
   }
