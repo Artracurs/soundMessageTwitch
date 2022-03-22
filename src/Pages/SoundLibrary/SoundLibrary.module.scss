@@ -1,3 +1,71 @@
+$border: 1px;
+
 .container {
-  
+  position: relative;
+  width: 1150px;
+  margin: 0 auto;
+
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 10px 0 10px 0;
+    gap: 10px;
+    border-radius: 5px;
+    
+
+    button {
+      background: rgba($color: #bdbdbd, $alpha: 0.1);
+      color: white;
+      width: 100px;
+      margin-left: 15px;
+      margin: 3px 3px 3px 3px;
+      border: 1px solid rgba($color: rgb(102, 29, 74), $alpha: 0.1);
+      border-radius: 5px;
+      
+    }
+  }
+
+  footer {
+    margin: 40px 0 10px 0;
+    color: #646464;
+  }
+}
+
+.urlLink {
+  background: rgba($color: #bdbdbd, $alpha: 0.1);
+  color: white;
+  border: 1px;
+  margin: 5px 5px 5px 5px;
+  border: 1px solid rgba($color: rgb(102, 29, 74), $alpha: 0.1);
+  border-radius: 5px;
+}
+
+.urlName {
+  background: rgba($color: #bdbdbd, $alpha: 0.1);
+  color: white;
+  border: 1px;
+  margin: 5px 5px 5px 5px;
+  border: 1px solid rgba($color: rgb(102, 29, 74), $alpha: 0.1);
+  border-radius: 5px;
+}
+
+label {
+  // margin-right: 15px;
+  margin-top: 5px;
+}
+
+.plus {
+  border-radius: 5px;
+  border: 1px solid rgb(102, 29, 74);
+  width: 36px;
+  height: 36px;
+  margin: 0 auto;
+  font-size: 16px;
+  position: relative;
+  top: 16px;
+  background: rgba($color: #bdbdbd, $alpha: 0.1);
+}
+.container2 {
+  display: grid;
+  grid-template-columns: 0.5fr 5fr 10fr 1fr;
 }

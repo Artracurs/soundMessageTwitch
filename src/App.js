@@ -10,6 +10,7 @@ import Bot from "./Bot/Bot";
 import Clock from "./Pages/Clock/Clock";
 import LikesFromChat from "./Pages/LikesFromChat/LinksFromChat";
 import SoundLibrary from "./Pages/SoundLibrary/SoundLibrary";
+import Main from "./Pages/FollowersPage/Main/Main";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
       <Clock />
 
       <Routes>
-        <Route path="/" to="/home" element={<FollowersPage />} />
+        <Route path="/" to="/followers" element={<FollowersPage />} />
         <Route path="/followers" element={<FollowersPage />} />
         <Route path="/chat" element={<LikesFromChat />} />
         <Route path="/sound" element={<SoundLibrary />} />
