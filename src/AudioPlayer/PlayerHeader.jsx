@@ -40,7 +40,7 @@ const PlayerHeader = (props) => {
 
   return (
     <div className={s.container}>
-      <label className={s.volmValue} defaultValue={localStorage.getItem("volume")} value="volume">{localStorage.getItem("volume")}%</label>
+      <label id="volumeLabelHeader" className={s.volmValue} defaultValue={localStorage.getItem("volume")} value="volume">{localStorage.getItem("volume")}%</label>
       <Form.Range type="range" defaultValue={localStorage.getItem("volume")} className={s.mainRange} id="ranger"
         min="0"
         max="100"

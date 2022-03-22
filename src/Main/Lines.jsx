@@ -13,10 +13,10 @@ export const Lines = (props) => {
       <td>Nickname</td>
       <td>
         <Form.Select size="sm" aria-label="Default select example">
-          <option onChange={()=>console.log("subscriber")} value="subscriber">Subscriber</option>
-          <option onChange={()=>console.log("moderator")} value="moderator">Moderator</option>
-          <option onChange={()=>console.log("follower")} value="follower">Follower</option>
-          <option onChange={()=>console.log("none")} value="none">None</option>
+          <option onClick={console.log("subscriber")} value="subscriber">Subscriber</option>
+          <option onChange={console.log("moderator")} value="moderator">Moderator</option>
+          <option onChange={console.log("follower")} value="follower">Follower</option>
+          <option onChange={console.log("none")} value="none">None</option>
         </Form.Select>
       </td>
       <td>{msg}</td>

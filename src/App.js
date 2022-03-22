@@ -14,6 +14,9 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import Clock from "./Test/Clock";
+import Chat from "./Pages/Chat";
+import LinksFromChat from "./Chat/LinksFromChat";
+
 
 function App() {
   return (
@@ -23,12 +26,14 @@ function App() {
       {/* <Grapher /> */}
       {/* {items} */}
       {/* {this.state.data} */}
+      <Bottw />
       <h4></h4>
       <Clock />
-    
+      
       <Routes>
         <Route path="/" to="/home" element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/chat" element={<Chat />} />
         <Route path="/sound" element={<SoundPage />} />
         <Route path="/pomodoro" element={<PomodoroPage />} />
         <Route path="/settings" element={<SettingsPage />} />

@@ -9,21 +9,21 @@ import { Disconnect } from '../Bot/Bottw'
 
 export function Sucsess(st) {
   console.log(st)
-  if (localStorage.getItem("Info") === 'No response from Twitch.') {
-    document.getElementById("connectionsStatus").innerHTML = "Disconnected"
-    if (localStorage.getItem("ConectionStatus") === "Disconnected" || document.getElementById("connectionsStatus").style.color === "red") {
-      document.getElementById("connectionsStatus").style.color = "red"
-      document.getElementById("connectionsStatus").innerHTML = localStorage.getItem("ConectionStatus")
-      document.querySelector("#settingChannelButton").style.color = "red"
-    }
-  } else {
-    document.getElementById("connectionsStatus").innerHTML = "Disconnected"
-    if (localStorage.getItem("ConectionStatus") === "Connected" || document.getElementById("connectionsStatus").style.color === "orange") {
-      document.getElementById("connectionsStatus").innerHTML = localStorage.getItem("ConectionStatus")
-      document.getElementById("connectionsStatus").style.color = "orange"
-      document.querySelector("#settingChannelButton").style.color = "orange"
-    }
-  }
+  // if (localStorage.getItem("Info") === 'No response from Twitch.') {
+  //   document.getElementById("connectionsStatus").innerHTML = "Disconnected"
+  //   if (localStorage.getItem("ConectionStatus") === "Disconnected" || document.getElementById("connectionsStatus").style.color === "red") {
+  //     document.getElementById("connectionsStatus").style.color = "red"
+  //     document.getElementById("connectionsStatus").innerHTML = localStorage.getItem("ConectionStatus")
+  //     document.querySelector("#settingChannelButton").style.color = "red"
+  //   }
+  // } else {
+  //   document.getElementById("connectionsStatus").innerHTML = "Disconnected"
+  //   if (localStorage.getItem("ConectionStatus") === "Connected" || document.getElementById("connectionsStatus").style.color === "orange") {
+  //     document.getElementById("connectionsStatus").innerHTML = localStorage.getItem("ConectionStatus")
+  //     document.getElementById("connectionsStatus").style.color = "orange"
+  //     document.querySelector("#settingChannelButton").style.color = "orange"
+  //   }
+  // }
 }
 
 const SettingsPage = (props) => {
@@ -64,7 +64,9 @@ const SettingsPage = (props) => {
       <Form.Group className="mb-3">
         <Form.Label>TMI Token </Form.Label>
         <div className={s.tmi}>
-          <Button onClick={() => { window.open('https://twitchapps.com/tmi/'); }}>Get Token</Button>
+          {/* <Button onClick={() => { window.open('https://twitchapps.com/tmi/'); }}>Get Token</Button> */}
+          {/* <Button onClick={() => { window.open('https://twitchapps.com/tmi/'); }}>Get Token</Button> */}
+          <a href="https://twitchapps.com/tmi/" target="_blank" id={st.tokenGet} className={st['btn-flip']} data-back="get" data-front="Token"></a>
           <Form.Control defaultValue={localStorage.getItem("Token")} type="password" autoComplete="on" id="token" placeholder="********************" />
         </div>
       </Form.Group>
