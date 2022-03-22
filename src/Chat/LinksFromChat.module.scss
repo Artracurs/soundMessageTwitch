@@ -7,7 +7,7 @@ $border: 1px;
   margin: 0 auto;
 
   header{
-    border: $border solid rgb(54, 54, 54);
+    // border: $border solid rgb(54, 54, 54);
     height: 60px;
     margin: 10px 0 10px 0;
     border-radius: 5px;
@@ -23,15 +23,16 @@ $border: 1px;
     margin: 10px 0 10px 0;
     gap: 10px;
     border-radius: 5px;
+    height: 400px;
 
     .left {
-      border: $border solid rgb(206, 206, 206);
+      border: $border solid rgb(102, 29, 74);
       margin: 10px 0 10px 0;
       min-height: 40px;
       border-radius: 5px;
     }
     .right {
-      border: $border solid rgb(206, 206, 206);
+      border: $border solid rgb(102, 29, 74);
       margin: 10px 0 10px 0;
       min-height: 40px;
       border-radius: 5px;

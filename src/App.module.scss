@@ -1,0 +1,30 @@
+body {
+  width: 0 auto;
+  text-align: center;
+  background: radial-gradient(#270f22, #041416);
+  color: white;
+  min-height: 99vh;
+  min-width: 99vw;
+  // min-width: 1200px;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logoHeader {
+  margin: 0 auto;
+  height: 40px;
+  // width: 1200px;
+  margin-top: 15px;
+  margin-bottom: 35px;
+
+  .twitchLogo {
+    height: 40px;
+    padding-right: 20px;
+  }
+
+  .headerText {
+    padding-left: 20px;
+    font-size: 32px;
+  }
+}

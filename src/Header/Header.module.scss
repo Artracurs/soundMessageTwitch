@@ -1,6 +1,6 @@
 .container {
   margin: 0 auto;
-  width: 1200px;
+  max-width: 1200px;
   
 }
 
@@ -26,6 +26,7 @@
   background: #0d6dfd;
   padding: 0 15px 0 15px;
   filter: blur(0px);
+
 }
 .volumeController {
   margin-right: 10px;
@@ -69,4 +70,9 @@
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+.headerButtons {
+  display: grid;
+  grid-template-columns: 100px 155px 144px 1fr 180px 1fr;
 }
