@@ -9,6 +9,31 @@ let ggJson = "...";
 
 const audio = new Audio(uwup);
 
+const allUsers = [{
+  nickname: "Nick Name",
+  date: "Date()",
+  messages: "0",
+  status: "Status of user",
+  mute: false,
+  individualAlert: "individual Alert"
+}]
+
+
+
+// const CreateUser = () =>{
+//   if(GetMessage ==- true){
+//     localStorage.setItem("AllUsers", allUsers)
+//   }
+// }
+
+
+
+
+
+const listOfAllUsers = allUsers.map(listOfAllUser => allUsers)
+
+
+
 const bot = new tmi.Client({
   options: { debug: false },
   identity: {
@@ -58,36 +83,48 @@ export const Disconnect = () => {
 //     return await true
 //   }
 // }
-function ShowMessage(){
+function ShowMessage() {
   // document.getElementById("chatRight") = message
   // document.getElementById("chatRight") = "cds"
 }
 
 
-const Bottw = () => {       
+
+
+
+
+
+const Bottw = () => {
   const [msg, setMsg] = useState(0)
 
-  useEffect(() => {  
-    bot.on("message", (channel, tags, message, self) => {
-      let data = { Date: date, stdSound: "Follower" };
-      let ffd = document.getElementById("muter");
-      // PlayAudio();
-      audio.volume = 1;
-      audio.play();
-      // ShowMessage(message)
 
-      audio.volume = localStorage.getItem("volume") / 100;
-      if (localStorage.getItem(tags["display-name"])) {
-        console.log(message);
+  // useEffect(()=>{
+  //   document.getElementById("chatRight").innerHTML = allUsers[0]
+  // })
+    
+  
 
-      } else {
-        console.log("vdfvf user");
-        localStorage.setItem(tags["display-name"], JSON.stringify(data));
-        let gg = localStorage.getItem(tags["display-name"]);
-        ggJson = JSON.parse(gg);
-      }
-    });
-  });
+  // useEffect(() => {  
+  //   bot.on("message", (channel, tags, message, self) => {
+  //     let data = { Date: date, stdSound: "Follower" };
+  //     let ffd = document.getElementById("muter");
+  //     // PlayAudio();
+  //     audio.volume = 1;
+  //     audio.play();
+  //     // ShowMessage(message)
+
+  //     audio.volume = localStorage.getItem("volume") / 100;
+  //     if (localStorage.getItem(tags["display-name"])) {
+  //       console.log(message);
+
+  //     } else {
+  //       console.log("vdfvf user");
+  //       localStorage.setItem(tags["display-name"], JSON.stringify(data));
+  //       let gg = localStorage.getItem(tags["display-name"]);
+  //       ggJson = JSON.parse(gg);
+  //     }
+  //   });
+  // });
 
   return (
     <div className={s.container}>

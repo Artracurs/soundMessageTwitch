@@ -1,6 +1,10 @@
 import s from "./LinksFromChat.module.scss"
-
+import { useEffect } from 'react'
+ 
 const LinksFromChat = () => {
+
+
+
   return (<div className={s.container}>
 
     <div className={s.main}>

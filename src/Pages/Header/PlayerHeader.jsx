@@ -14,9 +14,6 @@ export const PlayAudio = () => {
   audio.play();
 };
 
-
-
-
 const PlayerHeader = (props) => {
   const [rangeval, setRangeval] = useState(localStorage.getItem("volume"));
   const [act, setAct] = useState(localStorage.getItem("volumeStatus"));
