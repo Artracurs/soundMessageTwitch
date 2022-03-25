@@ -2,12 +2,15 @@ import s from "./Test_SoundLibrary.module.scss"
 import { useEffect, useState } from "react"
 import { v4 as uuidv4 } from 'uuid';
 import AddTrackButton from "./AddTrackButton";
-import UseState_Bleat from "./useState_bleat";
+import SoundLibrary from "../SoundLibrary";
+import Test_Show_lines from "./Test_Show_Lines";
+import Sound_library_Main from "./Sound_Library_Main";
+
 
 const soundList = [{
   0: {
-    trackName: "...",
-    url: "..."
+    name: "name",
+    url: "url"
   }
 }]
 
@@ -20,19 +23,30 @@ CreateLibrary()
 
 const Test_SoundLibrary = () => {
 
-  // useEffect(() =>{
-  //   document.getElementById("trackNAME").value = ""
-  //   document.getElementById("trackURL").value = ""
-  // })
+  const Clear =()=>{
+    document.getElementById("trackNAME").value = ""
+    document.getElementById("trackURL").value = ""
+  }
 
-  return (<div key={uuidv4()} className={s.container}>
-    <input disabled id="trackID" className={s.id}></input>
-    <input id="trackNAME" className={s.lineContainer}></input>
-    <input type="url" id="trackURL" className={s.lineContainer}></input>
-    <AddTrackButton />
-    <UseState_Bleat />
-    {/* <button onClick={SaveTrack} className={s.lineContainer}>Save</button> */}
-  </div>);
+  useEffect(() =>{
+    document.getElementById("trackNAME").value = ""
+    document.getElementById("trackURL").value = ""
+  })
+
+  return (<div>
+    <h4>Add files</h4>
+    <div className={s.container}>
+      <input disabled id="trackID" className={s.id}></input>
+      <input placeholder="Save file as name" id="trackNAME" className={s.lineContainer}></input>
+      <input placeholder="Enter the URL of mp3 file" type="url" id="trackURL" className={s.lineContainer}></input>
+      <AddTrackButton />
+      <button onClick={Clear}>CLEAR</button>
+    </div>
+    <h6></h6>
+    <h4>Track List</h4>
+      {/* <Test_Show_lines /> */}
+      <Sound_library_Main />
+  </div>)
 }
 
 

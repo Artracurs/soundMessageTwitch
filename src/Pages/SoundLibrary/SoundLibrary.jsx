@@ -1,7 +1,7 @@
 import s from "./SoundLibrary.module.scss"
 import { useState, useEffect } from "react"
 import { v4 as uuidv4 } from 'uuid';
-import UseState_Bleat from "./Test/useState_bleat";
+import Test_SoundLibrary from "./Test/Test_SoundLibrary_Line";
 
 const Player = (trackURL) => {
   const audio = new Audio("https://www.myinstants.com/media/sounds/yoshi-tongue.mp3")
@@ -30,7 +30,8 @@ const SoundLibrary = (props) => {
     <div className={s.main}>
       <div id="chatRight" className={s.right}>
 
-        <RightLines />
+        {/* <RightLines /> */}
+        <Test_SoundLibrary />
 
         <button onClick={CreateLine} className={s.plus}>Add track</button>
       </div>
@@ -59,8 +60,7 @@ const RightLines = (props) => {
 
 
   return (<>
-  {trackLine}
-  
+    {trackLine}
   </>)
 
 

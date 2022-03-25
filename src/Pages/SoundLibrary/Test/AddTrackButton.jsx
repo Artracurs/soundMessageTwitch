@@ -2,6 +2,8 @@ import s from "./Test_SoundLibrary.module.scss"
 import { useEffect, useState } from "react"
 import { v4 as uuidv4 } from 'uuid';
 
+let count = 0
+
 const AddTrackButton = () => {
   const [track, setTrack] = [{
     trackID: {
@@ -20,6 +22,7 @@ const AddTrackButton = () => {
     return url_validation.protocol === "http:" || url_validation.protocol === "https:";
   }
 
+  const [clrIntupAfterApply, setClrInputAfterApply] = useState("")
 
   const AddTrack = () => {
     let track_name = document.getElementById("trackNAME").value
@@ -31,72 +34,45 @@ const AddTrackButton = () => {
 
     oldlistJSON.push({
       [nextID]: {
-        trackName: track_name,
+        name: track_name,
         url: track_url
       }
     })
 
     if (track_name === "" || track_url === "") {
       console.log("заполнены не все поля")
-      // alert("Заполнены не все поля")
+      alert("Заполнены не все поля")
     }
     else if (isURL(track_url) === false) {
       console.log("неккоректная ссылка на аудио файл")
-      // alert("неккоректная ссылка на аудио файл")
+      alert("Неккоректная ссылка на аудио файл")
     } else {
       if (track_url.slice(-3) === "mp3") {
-        // localStorage.setItem("SoundLibrary", JSON.stringify(oldlistJSON))
-        // console.log(`запись ${nextID} дообавлена`)
-      } else {
-        console.log("Неккоректное расширение файла. Только формат mp3")
-        // alert("Неккоректное расширение файла. Только формат mp3")
+        for (let i = 0; i < oldlistJSON.length - 1; i++) {
+          const find_url_dublicate = oldlistJSON[i][i].url
+          if (find_url_dublicate === track_url) {
+            alert("Такой файл уже добавлен")
+            console.log("такой файл уже добавлен", i)
+            break
+          }
+          else if (find_url_dublicate !== track_url) {
+            count++
+            console.log(count)
+            if (count === oldlistJSON.length - 1) {
+              console.log(`запись ${nextID} дообавлена`)
+              localStorage.setItem("SoundLibrary", JSON.stringify(oldlistJSON))
+            }
+          }
+        }
       }
-
-      console.log({...oldlistJSON})
-
     }
+    count = 0
 
-
-    // if (track_name === "" || track_url === "") {
-    //   console.log("заполнены не все поля")
-    //   // alert("Заполнены не все поля")
-    // }
-    // else if (isURL(track_url) === false) {
-    //   console.log("неккоректная ссылка на аудио файл")
-    //   // alert("неккоректная ссылка на аудио файл")
-    // } else {
-    //   if (track_url.slice(-3) === "mp3") {
-
-    //     for (const link of JSON.parse(oldList)) {
-    //       console.log(link.url)
-    //       let url_is_exist = link.url.includes(track_url)
-
-    //       if (url_is_exist) {
-
-    //       }
-
-
-    //     }
-
-
-
-
-
-
-    //   } else {
-    //     console.log("Неккоректное расширение файла. Только формат mp3")
-    //     // alert("Неккоректное расширение файла. Только формат mp3")
-    //   }
-    // }
-
-
-
-
-
-
+    setClrInputAfterApply(() => { 
+      document.getElementById("trackNAME").value = "";
+      document.getElementById("trackURL").value = "";
+    })
   }
-
-
 
 
   return (<div className={s.containter}>

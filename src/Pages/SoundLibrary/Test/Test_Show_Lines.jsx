@@ -1,15 +1,14 @@
 import s from "./Test_SoundLibrary.module.scss"
 import { useEffect, useState } from "react"
 import { v4 as uuidv4 } from 'uuid';
-
+import ButtonDelateTrack, { PlayAudioFile } from "./ButtonDelateTrack";
 let trackList = localStorage.getItem("SoundLibrary")
 let tracks = JSON.parse(trackList)
 
 
 
-
 const Test_Show_lines = (props) => {
-  let track_id = tracks[0]["trackID"]
+  let track_id = tracks[0]["id"]
   let track_name = tracks[0]["trackName"]
   let track_url = tracks[0]["url"]
   const [lines, setLines] = useState(<>React LIne</>)
@@ -20,10 +19,11 @@ const Test_Show_lines = (props) => {
 
   return (<>
     <div key={track_id} className={s.container}>
-      <input value={track_id} disabled className={s.lineContainer}></input>
+      <input defaultValue={"12"} value={track_id} disabled className={s.id}></input>
       <input value={track_name} disabled className={s.lineContainer}></input>
       <input value={track_url} disabled className={s.lineContainer}></input>
-      <button className={s.lineContainer}>Play</button>
+      <PlayAudioFile />
+      <ButtonDelateTrack />
     </div>
 
   </>);
