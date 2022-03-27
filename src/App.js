@@ -13,9 +13,16 @@ import Test_SoundLibrary from "./Pages/SoundLibrary/Test/Test_SoundLibrary_Line"
 import Test_Show_lines from "./Pages/SoundLibrary/Test/Test_Show_Lines";
 import Sound_library_Main from "./Pages/SoundLibrary/Test/Sound_Library_Main";
 import UseMemo from "./Learning/UseMemo/useMemo";
+import AddTrackButton from "./Pages/SoundLibrary/Test/AddTrackButton";
+import ButtonDelateTrack from "./Pages/SoundLibrary/Test/ButtonDelateTrack";
+import FollowersPage from "./Pages/Followers/FollowersPage";
 
-// const muter = document.getElementById("muter")
-// console.log(muter);
+
+if (sessionStorage.getItem("messages")){
+  sessionStorage.setItem("messages", "")
+}
+
+
 
 function App() {
   return (
@@ -30,8 +37,8 @@ function App() {
       <Clock />
   
       <Routes>
-        <Route path="/" to="/followers" element={<Test_SoundLibrary />} />
-        <Route path="/followers" element={<></>} />
+        <Route path="/" to="/followers" element={<SettingsPage />} />
+        <Route path="/followers" element={<FollowersPage />} />
         <Route path="/chat" element={<LinksFromChat />} />
         <Route path="/sound" element={<SoundLibrary />} />
         <Route path="/pomodoro" element={<PomodoroPage />} />

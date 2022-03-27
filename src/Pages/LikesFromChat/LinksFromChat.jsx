@@ -2,7 +2,10 @@ import s from "./LinksFromChat.module.scss"
 import { useEffect } from 'react'
  
 const LinksFromChat = () => {
+  
 
+
+  const messagesSession = sessionStorage.getItem("messages")
 
 
   return (<div className={s.container}>
