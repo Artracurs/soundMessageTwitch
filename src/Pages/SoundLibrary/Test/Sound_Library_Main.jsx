@@ -18,8 +18,8 @@ const Sound_library_Main = () => {
         <input value={track.id} disabled className={s.id}></input>
         <input value={track.name} disabled className={s.lineContainer}></input>
         <input value={track.url} disabled className={s.lineContainer}></input>
-        <PlayAudioFile url={track.url} id={track.id} className={s.id} />
-        <ButtonDelateTrack url={track.url} id={track.url} className={s.id} />
+        <PlayAudioFile url={track.url} id={track.url} className={s.id} />
+        <ButtonDelateTrack url={track.url} id={track.id} className={s.id} />
       </div>
     </div>
   )
