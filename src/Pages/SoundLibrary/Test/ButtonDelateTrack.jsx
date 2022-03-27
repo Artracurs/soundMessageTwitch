@@ -60,7 +60,8 @@ const ButtonDelateTrack = (props) => {
     if (index !== -1) {
       soundLibraryJSON.splice(index, 1)
       localStorage.setItem("SoundLibrary", JSON.stringify(soundLibraryJSON))}
-      window.location.reload();
+      window.location.reload()
+
     }
 
 
