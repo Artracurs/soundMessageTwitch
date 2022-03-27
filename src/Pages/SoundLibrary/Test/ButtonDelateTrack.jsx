@@ -42,31 +42,21 @@ export const PlayAudioFile = (props) => {
 }
 
 
-
-
-
 const ButtonDelateTrack = (props) => {
   let soundLibrary = localStorage.getItem("SoundLibrary")
   let soundLibraryJSON = JSON.parse(soundLibrary)
 
-
-
   const [slist, setSlist] = useState(soundLibraryJSON)
 
-
   const DeleteTrack = () => {
-
+    
     const index = slist.findIndex(n => n.id === props.id);
     if (index !== -1) {
       soundLibraryJSON.splice(index, 1)
-      localStorage.setItem("SoundLibrary", JSON.stringify(soundLibraryJSON))}
-      window.location.reload()
-
+      localStorage.setItem("SoundLibrary", JSON.stringify(soundLibraryJSON))
     }
-
-
-  
-
+    window.location.reload()
+  }
 
 
   const Selected = () => {
@@ -76,6 +66,7 @@ const ButtonDelateTrack = (props) => {
     document.getElementById(props.id).style.background = "rgba(128, 128, 128, 0.192)"
   }
 
+  
   return (<div>
     <button id={props.id} onMouseLeave={Unselected} onMouseEnter={Selected} onClick={DeleteTrack} className={s.id}>Delete{props.delete}</button>
   </div>)
