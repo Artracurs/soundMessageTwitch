@@ -9,13 +9,18 @@ const Sound_library_Main = () => {
 
   const [trackline, setTrackline] = useState(<div>c</div>)
 
+  const [count, setCount] = useState(0)
+
   const AllTracks = localStorage.getItem("SoundLibrary")
   const AllTracksJSON = JSON.parse(AllTracks)
 
-  let tracks = AllTracksJSON.map(track =>
+   const Counter =()=> {setTrackline(count + 1)}
+
+
+  let tracks = AllTracksJSON.map((track, index) =>
     <div key={uuidv4()}>
       <div className={s.container}>
-        <input value={track.id} disabled className={s.id}></input>
+        <input value={index} disabled className={s.id}></input>
         <input value={track.name} disabled className={s.lineContainer}></input>
         <input value={track.url} disabled className={s.lineContainer}></input>
         <PlayAudioFile url={track.url} id={track.url} className={s.id} />
@@ -27,7 +32,7 @@ const Sound_library_Main = () => {
 
   return (<>
     {/* <button type="submit" onClick={()=>(setTrackline(trackline = tracks))} >Click</button> */}
-    <div style={{height: "600px", overflowY: "auto"}}>{tracks}</div>
+    <div style={{ height: "600px", overflowY: "auto" }}>{tracks}</div>
 
   </>);
 

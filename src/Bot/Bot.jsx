@@ -21,7 +21,7 @@ const allUsers = [{
 
 
 // const CreateUser = () =>{
-//   if(GetMessage ==- true){
+//   if(GetMessage === true){
 //     localStorage.setItem("AllUsers", allUsers)
 //   }
 // }
@@ -83,48 +83,43 @@ export const Disconnect = () => {
 //     return await true
 //   }
 // }
-function ShowMessage() {
+
+function ShowMessage(message) {
   // document.getElementById("chatRight") = message
   // document.getElementById("chatRight") = "cds"
 }
-
-
-
-
-
 
 
 const Bottw = () => {
   const [msg, setMsg] = useState(0)
 
 
-  // useEffect(()=>{
-  //   document.getElementById("chatRight").innerHTML = allUsers[0]
-  // })
+  useEffect(()=>{
+    // document.getElementById("chatRight").innerHTML = allUsers[0]
+  })
     
   
+  useEffect(() => {  
+    bot.on("message", (channel, tags, message, self) => {
+      let data = { Date: date, stdSound: "Follower" };
+      let ffd = document.getElementById("muter");
+      // PlayAudio();
+      audio.volume = 1;
+      audio.play();
+      ShowMessage(message)
 
-  // useEffect(() => {  
-  //   bot.on("message", (channel, tags, message, self) => {
-  //     let data = { Date: date, stdSound: "Follower" };
-  //     let ffd = document.getElementById("muter");
-  //     // PlayAudio();
-  //     audio.volume = 1;
-  //     audio.play();
-  //     // ShowMessage(message)
+      audio.volume = localStorage.getItem("volume") / 100;
+      if (localStorage.getItem(tags["display-name"])) {
+        console.log(message);
 
-  //     audio.volume = localStorage.getItem("volume") / 100;
-  //     if (localStorage.getItem(tags["display-name"])) {
-  //       console.log(message);
-
-  //     } else {
-  //       console.log("vdfvf user");
-  //       localStorage.setItem(tags["display-name"], JSON.stringify(data));
-  //       let gg = localStorage.getItem(tags["display-name"]);
-  //       ggJson = JSON.parse(gg);
-  //     }
-  //   });
-  // });
+      } else {
+        console.log("vdfvf user");
+        localStorage.setItem(tags["display-name"], JSON.stringify(data));
+        let gg = localStorage.getItem(tags["display-name"]);
+        ggJson = JSON.parse(gg);
+      }
+    });
+  });
 
   return (
     <div className={s.container}>

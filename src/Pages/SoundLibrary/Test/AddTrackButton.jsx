@@ -8,18 +8,10 @@ let count = 0
 const AddTrackButton = () => {
   const [track, setTrack] = [{
     id: "0",
-    name: "Discord Notification",
-    url: "https://www.myinstants.com/media/sounds/discord-notification.mp3",
-  }, {
-    id: "1",
-    name: "Cute UwU",
-    url: "https://www.myinstants.com/media/sounds/cute-uwu.mp3"
-  },
-  {
-    id: "2",
-    name: "Mac Quack",
-    url: "https://www.myinstants.com/media/sounds/mac-quack.mp3"
+    name: "bitok",
+    url: "https://www.myinstants.com/media/sounds/bitok.mp3",
   }]
+
 
   function isURL(string) {
     let url_validation;
@@ -39,6 +31,8 @@ const AddTrackButton = () => {
     let oldList = localStorage.getItem("SoundLibrary")
     const oldlistJSON = JSON.parse(oldList)
 
+
+
     const nextID = Object.keys(oldlistJSON).length
 
     oldlistJSON.push({
@@ -46,6 +40,11 @@ const AddTrackButton = () => {
       name: track_name,
       url: track_url,
     })
+
+    if (localStorage.getItem("SoundLibrary") === "[]") {
+      localStorage.setItem("SoundLibrary", JSON.stringify([{ id: nextID, name: track_name, url: track_url }]))
+    }
+
 
     if (track_name === "" || track_url === "") {
       console.log("заполнены не все поля")
