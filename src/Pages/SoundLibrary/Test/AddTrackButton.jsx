@@ -1,15 +1,15 @@
 import s from "./Test_SoundLibrary.module.scss"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { v4 as uuidv4 } from 'uuid';
+import Sound_library_Main from "./Sound_Library_Main";
 
 let count = 0
 
 const AddTrackButton = () => {
   const [track, setTrack] = [{
-    trackID: {
-      trackName: "",
-      url: ""
-    }
+    id: "",
+    name: "",
+    url: "",
   }]
 
   function isURL(string) {
@@ -33,10 +33,9 @@ const AddTrackButton = () => {
     const nextID = Object.keys(oldlistJSON).length
 
     oldlistJSON.push({
-      [nextID]: {
-        name: track_name,
-        url: track_url
-      }
+      id: nextID,
+      name: track_name,
+      url: track_url,
     })
 
     if (track_name === "" || track_url === "") {
@@ -49,7 +48,7 @@ const AddTrackButton = () => {
     } else {
       if (track_url.slice(-3) === "mp3") {
         for (let i = 0; i < oldlistJSON.length - 1; i++) {
-          const find_url_dublicate = oldlistJSON[i][i].url
+          const find_url_dublicate = oldlistJSON[i].url
           if (find_url_dublicate === track_url) {
             alert("Такой файл уже добавлен")
             console.log("такой файл уже добавлен", i)
@@ -68,15 +67,16 @@ const AddTrackButton = () => {
     }
     count = 0
 
-    setClrInputAfterApply(() => { 
+    setClrInputAfterApply(() => {
       document.getElementById("trackNAME").value = "";
       document.getElementById("trackURL").value = "";
     })
+    window.location.reload();
   }
-
 
   return (<div className={s.containter}>
     <button type="submit" onClick={AddTrack} className={s.lineContainer}>ADD</button>
+
   </div>);
 }
 

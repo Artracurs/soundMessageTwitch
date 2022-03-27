@@ -8,10 +8,9 @@ import Sound_library_Main from "./Sound_Library_Main";
 
 
 const soundList = [{
-  0: {
-    name: "name",
-    url: "url"
-  }
+  id: 0,
+  name: "minecraft_click",
+  url: "https://www.myinstants.com/media/sounds/minecraft_click.mp3",
 }]
 
 const CreateLibrary = () => {
@@ -19,33 +18,34 @@ const CreateLibrary = () => {
     localStorage.setItem("SoundLibrary", JSON.stringify(soundList))
   }
 }
-CreateLibrary()
+
 
 const Test_SoundLibrary = () => {
+  CreateLibrary()
 
-  const Clear =()=>{
+  const Clear = () => {
     document.getElementById("trackNAME").value = ""
     document.getElementById("trackURL").value = ""
   }
 
-  useEffect(() =>{
+  useEffect(() => {
     document.getElementById("trackNAME").value = ""
     document.getElementById("trackURL").value = ""
   })
 
   return (<div>
-    <h4>Add files</h4>
+    <h4>Add Sound</h4>
     <div className={s.container}>
       <input disabled id="trackID" className={s.id}></input>
       <input placeholder="Save file as name" id="trackNAME" className={s.lineContainer}></input>
       <input placeholder="Enter the URL of mp3 file" type="url" id="trackURL" className={s.lineContainer}></input>
       <AddTrackButton />
-      <button onClick={Clear}>CLEAR</button>
+      <button  className={s.id} onClick={Clear}>CLEAR</button>
     </div>
-    <h6></h6>
-    <h4>Track List</h4>
-      {/* <Test_Show_lines /> */}
-      <Sound_library_Main />
+    <br />
+    <h4>Sounds List</h4>
+    {/* <Test_Show_lines /> */}
+    <Sound_library_Main />
   </div>)
 }
 

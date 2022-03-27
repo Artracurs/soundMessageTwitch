@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Redirect } from "react-router-dom";
 import s from "./App.module.scss";
 import Header from "./Pages/Header/HeaderPage";
 import PomodoroPage from "./Pages/Pomodoro/PomodoroTimer";
@@ -12,6 +12,7 @@ import SoundLibrary from "./Pages/SoundLibrary/SoundLibrary";
 import Test_SoundLibrary from "./Pages/SoundLibrary/Test/Test_SoundLibrary_Line";
 import Test_Show_lines from "./Pages/SoundLibrary/Test/Test_Show_Lines";
 import Sound_library_Main from "./Pages/SoundLibrary/Test/Sound_Library_Main";
+import UseMemo from "./Learning/UseMemo/useMemo";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
   
       <Routes>
         <Route path="/" to="/followers" element={<Test_SoundLibrary />} />
-        <Route path="/followers" element={<Sound_library_Main />} />
+        <Route path="/followers" element={<></>} />
         <Route path="/chat" element={<LinksFromChat />} />
         <Route path="/sound" element={<SoundLibrary />} />
         <Route path="/pomodoro" element={<PomodoroPage />} />

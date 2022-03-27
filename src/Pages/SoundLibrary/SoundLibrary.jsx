@@ -33,11 +33,11 @@ const SoundLibrary = (props) => {
         {/* <RightLines /> */}
         <Test_SoundLibrary />
 
-        <button onClick={CreateLine} className={s.plus}>Add track</button>
+        {/* <button onClick={CreateLine} className={s.plus}>Add track</button> */}
       </div>
     </div>
 
-    <footer>Latest Release 21 March 2022</footer>
+    <footer>Latest Release 26 March 2022</footer>
   </div>);
 }
 
