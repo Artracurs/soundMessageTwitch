@@ -7,9 +7,18 @@ let count = 0
 
 const AddTrackButton = () => {
   const [track, setTrack] = [{
-    id: "",
-    name: "",
-    url: "",
+    id: "0",
+    name: "Discord Notification",
+    url: "https://www.myinstants.com/media/sounds/discord-notification.mp3",
+  }, {
+    id: "1",
+    name: "Cute UwU",
+    url: "https://www.myinstants.com/media/sounds/cute-uwu.mp3"
+  },
+  {
+    id: "2",
+    name: "Mac Quack",
+    url: "https://www.myinstants.com/media/sounds/mac-quack.mp3"
   }]
 
   function isURL(string) {

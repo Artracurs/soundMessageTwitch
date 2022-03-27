@@ -15,7 +15,7 @@ export const PlayAudioFile = (props) => {
 
 
   const PlayByID = () => {
-    audio.volume = volume
+    audio.volume = 0.5
     audio.play()
     document.getElementById(props.url).style.background = "#0d6dfd"
   }
@@ -59,27 +59,12 @@ const ButtonDelateTrack = (props) => {
     const index = slist.findIndex(n => n.id === props.id);
     if (index !== -1) {
       soundLibraryJSON.splice(index, 1)
+      localStorage.setItem("SoundLibrary", JSON.stringify(soundLibraryJSON))}
+      window.location.reload();
     }
 
-    setSlist(()=>  {slist = 0;
-      
-      localStorage.setItem("SoundLibrary", JSON.stringify(soundLibraryJSON))})
+
   
-
-
-
-    // window.location.reload();
-  }
-
-
-
-
-
-
-
-
-
-
 
 
 
