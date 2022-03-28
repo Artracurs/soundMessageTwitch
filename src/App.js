@@ -184,15 +184,15 @@ if (localStorage.getItem("FirstMessageSound") === null) {
 function App() {
   useEffect(() => {
     if (localStorage.getItem("ConectionStatus") === "Connected") {
-      document.getElementById("settingChannelButton").style.color = "orange"
       try {
+        document.getElementById("settingChannelButton").style.color = "orange"
         document.getElementById("connectionsStatus").style.color = "orange";
         document.getElementById("connectionsStatus").innerHTML = "Connected";
       } catch {}
     }
     if (localStorage.getItem("ConectionStatus") === "Disconnected") {
-      document.getElementById("connectionsStatus").style.color = "red";
       try {
+        document.getElementById("connectionsStatus").style.color = "red";
         document.getElementById("connectionsStatus").style.color = "red";
         document.getElementById("connectionsStatus").innerHTML = "Disconnected";
       } catch {}
