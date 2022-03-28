@@ -5,8 +5,6 @@ import ButtonDelateTrack, { PlayAudioFile } from "./ButtonDelateTrack";
 let trackList = localStorage.getItem("SoundLibrary")
 let tracks = JSON.parse(trackList)
 
-
-
 const Test_Show_lines = (props) => {
   // let track_id = tracks[0]["id"]
   // let track_name = tracks[0]["trackName"]

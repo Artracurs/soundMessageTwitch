@@ -4,17 +4,13 @@ import s from "./Test_SoundLibrary.module.scss"
 import { v4 as uuidv4 } from 'uuid';
 
 
-
 const Sound_library_Main = () => {
-
   const [trackline, setTrackline] = useState(<div>c</div>)
-
   const [count, setCount] = useState(0)
-
   const AllTracks = localStorage.getItem("SoundLibrary")
   const AllTracksJSON = JSON.parse(AllTracks)
 
-   const Counter =()=> {setTrackline(count + 1)}
+  const Counter =()=> {setTrackline(count + 1)}
 
 
   let tracks = AllTracksJSON.map((track, index) =>

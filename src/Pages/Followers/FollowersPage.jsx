@@ -5,9 +5,13 @@ import FollowersStandartMessage from "./FollowersFirstMessage.jsx/FollowersStand
 const FollowersPage = () => {
 
 
-  return (<div className={s.container}>
-    <FollowersFirstMessage />
-    <FollowersStandartMessage />
+  return (<div >
+    <h4>Sound settings</h4>
+    <div className={s.container}>
+      <FollowersFirstMessage />
+      <FollowersStandartMessage />
+    </div>
+
   </div>);
 }
 

@@ -6,11 +6,7 @@ import SoundLibrary from "../SoundLibrary";
 import Test_Show_lines from "./Test_Show_Lines";
 import Sound_library_Main from "./Sound_Library_Main";
 
-
-
 const Test_SoundLibrary = () => {
-
-
   const Clear = () => {
     document.getElementById("trackNAME").value = ""
     document.getElementById("trackURL").value = ""
@@ -36,9 +32,5 @@ const Test_SoundLibrary = () => {
     <Sound_library_Main />
   </div>)
 }
-
-
-
-
 
 export default Test_SoundLibrary;
