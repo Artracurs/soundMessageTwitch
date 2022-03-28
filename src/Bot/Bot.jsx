@@ -83,12 +83,8 @@ const Bottw = () => {
       let time = new Date();
       let date2 = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
 
-      
-
       let data = { Date: date2, stdSound: "Follower" };
       let ffd = document.getElementById("muter");
-
-
 
 
       let getMessages = sessionStorage.getItem("messages")

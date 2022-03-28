@@ -4,7 +4,12 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 const LinksFromChat = () => {
-  const [link, setLink] = useState("...")
+
+  // const [messagesSession, setMessagesSession] = useState(sessionStorage.getItem("messages"))
+
+  
+
+
   const messagesSession = sessionStorage.getItem("messages")
   let messages = JSON.parse(sessionStorage.getItem("messages"))
   messages.reverse()
@@ -19,6 +24,7 @@ const LinksFromChat = () => {
     </div>
     )
   })
+
 
   return (<div className={s.container}>
     <div className={s.main}>
