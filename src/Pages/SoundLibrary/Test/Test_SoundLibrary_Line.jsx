@@ -7,21 +7,9 @@ import Test_Show_lines from "./Test_Show_Lines";
 import Sound_library_Main from "./Sound_Library_Main";
 
 
-const soundList = [{
-  id: "0",
-  name: "bitok",
-  url: "https://www.myinstants.com/media/sounds/bitok.mp3",
-}]
-
-const CreateLibrary = () => {
-  if (localStorage.getItem("SoundLibrary") === null) {
-    localStorage.setItem("SoundLibrary", JSON.stringify(soundList))
-  }
-}
-
 
 const Test_SoundLibrary = () => {
-  CreateLibrary()
+
 
   const Clear = () => {
     document.getElementById("trackNAME").value = ""

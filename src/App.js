@@ -17,6 +17,20 @@ import AddTrackButton from "./Pages/SoundLibrary/Test/AddTrackButton";
 import ButtonDelateTrack from "./Pages/SoundLibrary/Test/ButtonDelateTrack";
 import FollowersPage from "./Pages/Followers/FollowersPage";
 
+const soundList = [{
+  id: "0",
+  name: "bitok",
+  url: "https://www.myinstants.com/media/sounds/bitok.mp3",
+}]
+
+
+const CreateLibrary = () => {
+  if (localStorage.getItem("SoundLibrary") === null) {
+    localStorage.setItem("SoundLibrary", JSON.stringify(soundList))
+  }
+}
+
+CreateLibrary()
 
 if (!sessionStorage.key("messages")){
   sessionStorage.setItem("messages", "...")
@@ -29,6 +43,8 @@ if (localStorage.getItem("StandartSound") === null){
 if (localStorage.getItem("FirstMessageSound") === null){
   localStorage.setItem("FirstMessageSound", "...")
 }
+
+
 
 
 
