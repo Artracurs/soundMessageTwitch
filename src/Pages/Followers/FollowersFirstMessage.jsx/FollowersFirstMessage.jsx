@@ -33,7 +33,7 @@ const FollowersFirstMessage = (props) => {
     <select onChange={Change} name="" id="options">
       <FollowersOption />
     </select>
-    <button onClick={() => window.location.reload()} className={s.button}>Save</button>
+    {/* <button onClick={() => window.location.reload()} className={s.button}>Save</button> */}
   </div>);
 }
 

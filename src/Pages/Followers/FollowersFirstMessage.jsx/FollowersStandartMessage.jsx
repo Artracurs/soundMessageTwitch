@@ -33,7 +33,7 @@ const FollowersStandartMessage = () => {
     <select onChange={Change} name="" id="option">
       <FollowersOption />
     </select>
-    <button onClick={() => window.location.reload()} className={s.button}>Save</button>
+    {/* <button onClick={() => window.location.reload()} className={s.button}>Save</button> */}
   </div>);
 }
 
