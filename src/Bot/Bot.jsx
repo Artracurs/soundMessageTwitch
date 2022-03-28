@@ -7,7 +7,7 @@ import uwup from "../AudioPlayer/Audiofiles/uwup.mp3"
 let date = new Date();
 let ggJson = "...";
 
-const audio = new Audio(uwup);
+const audioFirstMessage = new Audio(localStorage.getItem("FirstMessageSound"));
 
 const allUsers = [{
   nickname: "Nick Name",
@@ -84,39 +84,41 @@ export const Disconnect = () => {
 //   }
 // }
 
-function ShowMessage(message) {
-  // document.getElementById("chatRight") = message
-  // document.getElementById("chatRight") = "cds"
-}
+
 
 
 const Bottw = () => {
   const [msg, setMsg] = useState(0)
 
 
-  useEffect(()=>{
+  useEffect(() => {
     // document.getElementById("chatRight").innerHTML = allUsers[0]
   })
-    
-  
-  useEffect(() => {  
+
+
+
+
+  useEffect(() => {
     bot.on("message", (channel, tags, message, self) => {
       let data = { Date: date, stdSound: "Follower" };
       let ffd = document.getElementById("muter");
-      // PlayAudio();
-      audio.volume = 1;
-      audio.play();
-      ShowMessage(message)
 
-      audio.volume = localStorage.getItem("volume") / 100;
       if (localStorage.getItem(tags["display-name"])) {
         console.log(message);
 
+        audioFirstMessage.volume = localStorage.getItem("volume")/100
+        audioFirstMessage.play();
+
+
       } else {
-        console.log("vdfvf user");
+        console.log("message");
         localStorage.setItem(tags["display-name"], JSON.stringify(data));
         let gg = localStorage.getItem(tags["display-name"]);
         ggJson = JSON.parse(gg);
+
+        audioFirstMessage.volume = localStorage.getItem("volume") / 100;
+        audioFirstMessage.play();
+
       }
     });
   });

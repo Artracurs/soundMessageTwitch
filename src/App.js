@@ -18,8 +18,16 @@ import ButtonDelateTrack from "./Pages/SoundLibrary/Test/ButtonDelateTrack";
 import FollowersPage from "./Pages/Followers/FollowersPage";
 
 
-if (sessionStorage.getItem("messages")){
-  sessionStorage.setItem("messages", "")
+if (!sessionStorage.key("messages")){
+  sessionStorage.setItem("messages", "...")
+}
+
+if (localStorage.getItem("StandartSound") === null){
+  localStorage.setItem("StandartSound", "...")
+}
+
+if (localStorage.getItem("FirstMessageSound") === null){
+  localStorage.setItem("FirstMessageSound", "...")
 }
 
 

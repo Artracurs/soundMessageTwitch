@@ -9,7 +9,32 @@
     "**/.classpath": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/.factorypath": true
+    "**/.factorypath": true,
+    "dfa.js": true,
+    "~$ommits.docx": true,
+    "Commits.docx": true,
+    "package-lock.json": true,
+    "package.json": true,
+    "src/App.module.scss": true,
+    "src/index.js": true,
+    ".vscode": true,
+    "api": true,
+    "build": true,
+    "src/Pages/sty.css": true,
+    "src/Learning": true
   },
-  "hide-files.files": []
+  "hide-files.files": [
+    "dfa.js",
+    "~$ommits.docx",
+    "Commits.docx",
+    "package-lock.json",
+    "package.json",
+    "src/App.module.scss",
+    "src/index.js",
+    ".vscode",
+    "api",
+    "build",
+    "src/Pages/sty.css",
+    "src/Learning"
+  ]
 }

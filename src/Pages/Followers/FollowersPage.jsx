@@ -3,11 +3,15 @@ import FollowersFirstMessage from "./FollowersFirstMessage.jsx/FollowersFirstMes
 import FollowersStandartMessage from "./FollowersFirstMessage.jsx/FollowersStandartMessage";
 
 const FollowersPage = () => {
-  return ( <div className={s.container}>
+
+
+
+
+
+  return (<div className={s.container}>
     <FollowersFirstMessage />
     <FollowersStandartMessage />
-    
-  </div> );
+  </div>);
 }
- 
+
 export default FollowersPage;
