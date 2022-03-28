@@ -29,11 +29,15 @@ const Header = () => {
       localStorage.setItem("volumeStatus", 0)
     }
     let ff = document.getElementById("muter")
-    if (ff.checked == true){
+    if (ff.checked === true){
+      localStorage.setItem("volume", getOldVol)
+      document.getElementById("ranger").disabled = false
       ToggleSound()
       console.log("LOG >>> Global Sound On")
       muteLabel.innerText = "Sound On"
     } else {
+      document.getElementById("ranger").disabled = true
+      localStorage.setItem("volume", 0)
       muteLabel.innerText = "Not Active"
       console.log("LOG >>> Global Sound Off")
     } 

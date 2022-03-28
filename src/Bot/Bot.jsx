@@ -4,7 +4,7 @@ import tmi from "tmi.js";
 import { Sucsess } from "../Pages/Authorisation/AuthorisationPage";
 import uwup from "../AudioPlayer/Audiofiles/uwup.mp3"
 
-let date = new Date();
+
 let ggJson = "...";
 
 const audioFirstMessage = new Audio(localStorage.getItem("FirstMessageSound"));
@@ -73,16 +73,35 @@ export const Disconnect = () => {
 
 
 
+
 const Bottw = () => {
   const [msg, setMsg] = useState(0)
 
   useEffect(() => {
     bot.on("message", (channel, tags, message, self) => {
-      let data = { Date: date, stdSound: "Follower" };
+      
+      let time = new Date();
+      let date2 = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+
+      
+
+      let data = { Date: date2, stdSound: "Follower" };
       let ffd = document.getElementById("muter");
 
+
+
+
+      let getMessages = sessionStorage.getItem("messages")
+      let getMessagesJSON = JSON.parse(getMessages)
+
+      let strin = {date: `${date2}`, nickname: `${tags["display-name"]}`, message: `${message}`}
+  
+      getMessagesJSON.push(strin)
+      sessionStorage.setItem("messages", JSON.stringify(getMessagesJSON))
+
+
       if (localStorage.getItem(tags["display-name"])) {
-        console.log(message);
+        // console.log(message);
 
         const audioStandartMessage = new Audio(localStorage.getItem("StandartSound"));
         audioStandartMessage.volume = localStorage.getItem("volume") / 100
@@ -90,7 +109,7 @@ const Bottw = () => {
         audioStandartMessage.play();
 
       } else {
-        console.log("message");
+        // console.log("message");
         localStorage.setItem(tags["display-name"], JSON.stringify(data));
         let gg = localStorage.getItem(tags["display-name"]);
         ggJson = JSON.parse(gg);

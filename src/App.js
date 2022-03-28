@@ -165,12 +165,12 @@ const CreateLibrary = () => {
   if (localStorage.getItem("SoundLibrary") === null) {
     localStorage.setItem("SoundLibrary", JSON.stringify(soundList));
   }
-};
-
+}
 CreateLibrary();
 
-if (!sessionStorage.key("messages")) {
-  sessionStorage.setItem("messages", "...");
+if (!sessionStorage.getItem("messages")) {
+  const message = []
+  sessionStorage.setItem("messages", JSON.stringify(message));
 }
 
 if (localStorage.getItem("StandartSound") === null) {
@@ -180,6 +180,8 @@ if (localStorage.getItem("StandartSound") === null) {
 if (localStorage.getItem("FirstMessageSound") === null) {
   localStorage.setItem("FirstMessageSound", "...");
 }
+
+
 
 function App() {
   useEffect(() => {

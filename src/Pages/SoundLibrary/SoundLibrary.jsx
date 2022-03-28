@@ -5,7 +5,7 @@ import Test_SoundLibrary from "./Test/Test_SoundLibrary_Line";
 
 const Player = (trackURL) => {
   const audio = new Audio("https://www.myinstants.com/media/sounds/yoshi-tongue.mp3")
-  audio.volume = 0.5
+  audio.volume = localStorage.getItem("volume")/10
   audio.play()
 }
 

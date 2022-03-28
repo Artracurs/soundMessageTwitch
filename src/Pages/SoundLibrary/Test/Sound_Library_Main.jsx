@@ -28,7 +28,7 @@ const Sound_library_Main = () => {
 
   return (<>
     {/* <button type="submit" onClick={()=>(setTrackline(trackline = tracks))} >Click</button> */}
-    <div style={{ height: "600px", overflowY: "auto" }}>{tracks}</div>
+    <div style={{ height: "500px", overflowY: "auto" }}>{tracks}</div>
 
   </>);
 
