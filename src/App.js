@@ -16,6 +16,7 @@ import UseMemo from "./Learning/UseMemo/useMemo";
 import AddTrackButton from "./Pages/SoundLibrary/Test/AddTrackButton";
 import ButtonDelateTrack from "./Pages/SoundLibrary/Test/ButtonDelateTrack";
 import FollowersPage from "./Pages/Followers/FollowersPage";
+import { useEffect } from "react";
 
 const soundList = [
   {
@@ -25,64 +26,139 @@ const soundList = [
   },
   {
     id: 1,
-    name: "light 1",
-    url: "https://www.myinstants.com/media/sounds/514562.mp3",
+    name: "addicted",
+    url: "https://www.myinstants.com/media/sounds/nghngh.mp3",
   },
   {
     id: 2,
-    name: "duck 1",
-    url: "https://www.myinstants.com/media/sounds/56162.mp3",
+    name: "breeze",
+    url: "https://www.myinstants.com/media/sounds/6896785.mp3",
   },
   {
     id: 3,
-    name: "duck 2",
-    url: "https://www.myinstants.com/media/sounds/89146.mp3",
+    name: "authority",
+    url: "https://www.myinstants.com/media/sounds/88775.mp3",
   },
   {
     id: 4,
-    name: "short 1",
-    url: "https://www.myinstants.com/media/sounds/5456233.mp3",
+    name: "counter",
+    url: "https://www.myinstants.com/media/sounds/965856756.mp3",
   },
   {
     id: 5,
     name: "sms",
-    url: "https://www.myinstants.com/media/sounds/0195.mp3",
+    url: "https://www.myinstants.com/media/sounds/75464556.mp3",
   },
   {
     id: 6,
-    name: "short 2",
-    url: "https://www.myinstants.com/media/sounds/0184.mp3",
+    name: "acquaintance",
+    url: "https://www.myinstants.com/media/sounds/534534.mp3",
   },
   {
     id: 7,
-    name: "sms 2",
-    url: "https://www.myinstants.com/media/sounds/0180.mp3",
+    name: "mark",
+    url: "https://www.myinstants.com/media/sounds/574376456454.mp3",
   },
   {
     id: 8,
-    name: "short 3",
-    url: "https://www.myinstants.com/media/sounds/0173.mp3",
+    name: "expertise",
+    url: " https://www.myinstants.com/media/sounds/534bfd5345.mp3",
   },
   {
     id: 9,
-    name: "short 4",
-    url: "https://www.myinstants.com/media/sounds/789145.mp3",
+    name: "few",
+    url: "https://www.myinstants.com/media/sounds/534535.mp3",
   },
   {
     id: 10,
     name: "electron",
-    url: "https://www.myinstants.com/media/sounds/84986653.mp3",
+    url: "https://www.myinstants.com/media/sounds/5345345.mp3",
   },
   {
     id: 11,
-    name: "pock",
-    url: "https://www.myinstants.com/media/sounds/56253.mp3",
+    name: "decide",
+    url: "https://www.myinstants.com/media/sounds/5737355-3435.mp3",
   },
   {
     id: 12,
     name: "Tuturu",
-    url: "https://www.myinstants.com/media/sounds/tuturu_1.mp3"
-  }
+    url: "https://www.myinstants.com/media/sounds/tuturu_1.mp3",
+  },
+  {
+    id: 13,
+    name: "ethnic",
+    url: "https://www.myinstants.com/media/sounds/45754.mp3",
+  },
+  {
+    id: 14,
+    name: "theory",
+    url: "https://www.myinstants.com/media/sounds/59i56756756.mp3",
+  },
+  {
+    id: 15,
+    name: "ancestor",
+    url: "https://www.myinstants.com/media/sounds/458756756.mp3",
+  },
+  {
+    id: 16,
+    name: "lamp",
+    url: "https://www.myinstants.com/media/sounds/37455634.mp3",
+  },
+  {
+    id: 17,
+    name: "professor",
+    url: "https://www.myinstants.com/media/sounds/34545634.mp3",
+  },
+  {
+    id: 18,
+    name: "empire",
+    url: "https://www.myinstants.com/media/sounds/384685756.mp3",
+  },
+  {
+    id: 19,
+    name: "sticky",
+    url: "https://www.myinstants.com/media/sounds/387356.mp3",
+  },
+  {
+    id: 20,
+    name: "solution",
+    url: "https://www.myinstants.com/media/sounds/579867867.mp3",
+  },
+  {
+    id: 21,
+    name: "sweep",
+    url: "https://www.myinstants.com/media/sounds/69690686.mp3",
+  },
+  {
+    id: 22,
+    name: "growth",
+    url: "https://www.myinstants.com/media/sounds/2352342.mp3",
+  },
+  {
+    id: 23,
+    name: "mass",
+    url: "https://www.myinstants.com/media/sounds/21235513.mp3",
+  },
+  {
+    id: 24,
+    name: "representative",
+    url: "https://www.myinstants.com/media/sounds/35346376.mp3",
+  },
+  {
+    id: 25,
+    name: "hold",
+    url: "https://www.myinstants.com/media/sounds/457635634.mp3",
+  },
+  {
+    id: 26,
+    name: "discipline",
+    url: "https://www.myinstants.com/media/sounds/nghngh.mp3",
+  },
+  {
+    id: 27,
+    name: "stake",
+    url: "https://www.myinstants.com/media/sounds/5641321681632.mp3",
+  },
 ];
 
 const CreateLibrary = () => {
@@ -106,6 +182,23 @@ if (localStorage.getItem("FirstMessageSound") === null) {
 }
 
 function App() {
+  useEffect(() => {
+    if (localStorage.getItem("ConectionStatus") === "Connected") {
+      document.getElementById("settingChannelButton").style.color = "orange"
+      try {
+        document.getElementById("connectionsStatus").style.color = "orange";
+        document.getElementById("connectionsStatus").innerHTML = "Connected";
+      } catch {}
+    }
+    if (localStorage.getItem("ConectionStatus") === "Disconnected") {
+      document.getElementById("connectionsStatus").style.color = "red";
+      try {
+        document.getElementById("connectionsStatus").style.color = "red";
+        document.getElementById("connectionsStatus").innerHTML = "Disconnected";
+      } catch {}
+    }
+  });
+
   return (
     <div className="App">
       <div className={s.logoHeader}>

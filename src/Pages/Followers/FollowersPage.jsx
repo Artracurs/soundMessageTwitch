@@ -6,7 +6,7 @@ const FollowersPage = () => {
 
 
   return (<div >
-    <h4>Sound settings</h4>
+    <h4 className={s}>Sound settings </h4>
     <div className={s.container}>
       <FollowersFirstMessage />
       <FollowersStandartMessage />

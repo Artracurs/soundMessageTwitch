@@ -76,6 +76,17 @@ const Header = () => {
   //   }
   // })
 
+  useEffect(() =>{
+    if (localStorage.getItem("ConectionStatus") === "Connected") {
+      document.getElementById("settingChannelButton").style.color = "orange"
+      // document.getElementById("connectionsStatus").style.color = "orange"
+    }
+    if (localStorage.getItem("ConectionStatus") === "Disconnected") {
+      document.getElementById("settingChannelButton").style.color = "red"
+      // document.getElementById("connectionsStatus").style.color = "red"
+    }
+  })
+
   return (
     <div className={st.container}>
       <Navbar bg="dark" variant="dark">

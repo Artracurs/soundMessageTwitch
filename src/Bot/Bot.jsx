@@ -8,7 +8,7 @@ let date = new Date();
 let ggJson = "...";
 
 const audioFirstMessage = new Audio(localStorage.getItem("FirstMessageSound"));
-const audioStandartMessage = new Audio(localStorage.getItem("StandartSound"));
+// const audioStandartMessage = new Audio(localStorage.getItem("StandartSound"));
 
 
 const allUsers = [{
@@ -55,50 +55,26 @@ bot.connect().then(() => {
       if (info[0] === `#${fer}`) {
         localStorage.setItem("ConectionStatus", "Connected");
         localStorage.setItem("Info", info)
-        Sucsess(info);
+        // Sucsess(info);
       }
     })
     .catch((error) => {
       localStorage.setItem("ConectionStatus", "Disconnected");
       localStorage.setItem("Info", error)
-      Sucsess(error);
+      // Sucsess(error);
     });
 });
 
-export const Disconnect = () => {
-  // localStorage.setItem("ChannelName", "")
-  // bot
-  //   .disconnect()
-  //   .then((data) => {
-  //     console.log(data);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
-};
 
-// export async function Sucsess(st){
-//   console.log(st)
-//   if (st === 'No response from Twitch.'){
-//     return await false
-//   } else {
-//     return await true
-//   }
-// }
+export const Disconnect = () => {
+
+};
 
 
 
 
 const Bottw = () => {
   const [msg, setMsg] = useState(0)
-
-
-  useEffect(() => {
-    // document.getElementById("chatRight").innerHTML = allUsers[0]
-  })
-
-
-
 
   useEffect(() => {
     bot.on("message", (channel, tags, message, self) => {
@@ -108,7 +84,9 @@ const Bottw = () => {
       if (localStorage.getItem(tags["display-name"])) {
         console.log(message);
 
-        audioStandartMessage.volume = localStorage.getItem("volume")/100
+        const audioStandartMessage = new Audio(localStorage.getItem("StandartSound"));
+        audioStandartMessage.volume = localStorage.getItem("volume") / 100
+        // audioStandartMessage.volume = 1
         audioStandartMessage.play();
 
       } else {
