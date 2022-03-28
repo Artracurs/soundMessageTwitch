@@ -5,9 +5,6 @@ import FollowersStandartMessage from "./FollowersFirstMessage.jsx/FollowersStand
 const FollowersPage = () => {
 
 
-
-
-
   return (<div className={s.container}>
     <FollowersFirstMessage />
     <FollowersStandartMessage />

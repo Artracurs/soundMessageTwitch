@@ -8,21 +8,21 @@ import st from "./Button_effect.module.scss"
 
 export function Sucsess(st) {
   console.log(st)
-  // if (localStorage.getItem("Info") === 'No response from Twitch.') {
-  //   document.getElementById("connectionsStatus").innerHTML = "Disconnected"
-  //   if (localStorage.getItem("ConectionStatus") === "Disconnected" || document.getElementById("connectionsStatus").style.color === "red") {
-  //     document.getElementById("connectionsStatus").style.color = "red"
-  //     document.getElementById("connectionsStatus").innerHTML = localStorage.getItem("ConectionStatus")
-  //     document.querySelector("#settingChannelButton").style.color = "red"
-  //   }
-  // } else {
-  //   document.getElementById("connectionsStatus").innerHTML = "Disconnected"
-  //   if (localStorage.getItem("ConectionStatus") === "Connected" || document.getElementById("connectionsStatus").style.color === "orange") {
-  //     document.getElementById("connectionsStatus").innerHTML = localStorage.getItem("ConectionStatus")
-  //     document.getElementById("connectionsStatus").style.color = "orange"
-  //     document.querySelector("#settingChannelButton").style.color = "orange"
-  //   }
-  // }
+  if (localStorage.getItem("Info") === 'No response from Twitch.') {
+    document.getElementById("connectionsStatus").innerHTML = "Disconnected"
+    if (localStorage.getItem("ConectionStatus") === "Disconnected" || document.getElementById("connectionsStatus").style.color === "red") {
+      document.getElementById("connectionsStatus").style.color = "red"
+      document.getElementById("connectionsStatus").innerHTML = localStorage.getItem("ConectionStatus")
+      document.querySelector("#settingChannelButton").style.color = "red"
+    }
+  } else {
+    document.getElementById("connectionsStatus").innerHTML = "Disconnected"
+    if (localStorage.getItem("ConectionStatus") === "Connected" || document.getElementById("connectionsStatus").style.color === "orange") {
+      document.getElementById("connectionsStatus").innerHTML = localStorage.getItem("ConectionStatus")
+      document.getElementById("connectionsStatus").style.color = "orange"
+      document.querySelector("#settingChannelButton").style.color = "orange"
+    }
+  }
 }
 
 const SettingsPage = (props) => {

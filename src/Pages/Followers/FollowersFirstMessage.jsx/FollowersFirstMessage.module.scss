@@ -16,13 +16,15 @@
   line-height: 18px;
   width: 80px;
   border-radius: 5px;
+  border:none;
 
-  background: rgb(124, 124, 124);
+  background: rgba(128, 128, 128, 0.192);
   text-align: center;
   color: white;
   margin: 3px 0 0 0;
   border-radius: 5px;
   margin-left: 20px;
+  height: 40px;
 }
 
 .button:hover {

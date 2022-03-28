@@ -8,6 +8,8 @@ let date = new Date();
 let ggJson = "...";
 
 const audioFirstMessage = new Audio(localStorage.getItem("FirstMessageSound"));
+const audioStandartMessage = new Audio(localStorage.getItem("StandartSound"));
+
 
 const allUsers = [{
   nickname: "Nick Name",
@@ -106,9 +108,8 @@ const Bottw = () => {
       if (localStorage.getItem(tags["display-name"])) {
         console.log(message);
 
-        audioFirstMessage.volume = localStorage.getItem("volume")/100
-        audioFirstMessage.play();
-
+        audioStandartMessage.volume = localStorage.getItem("volume")/100
+        audioStandartMessage.play();
 
       } else {
         console.log("message");
@@ -118,7 +119,6 @@ const Bottw = () => {
 
         audioFirstMessage.volume = localStorage.getItem("volume") / 100;
         audioFirstMessage.play();
-
       }
     });
   });

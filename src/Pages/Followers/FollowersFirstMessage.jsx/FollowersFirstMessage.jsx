@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from 'uuid';
 import FollowersOption from "./FollowersOption";
 import { useEffect } from "react";
 
-
 const FollowersFirstMessage = (props) => {
   const Change = () => {
     const selectTrack = document.getElementById("options");
@@ -18,6 +17,7 @@ const FollowersFirstMessage = (props) => {
     localStorage.setItem("FirstMessageSound", link)
 
     let selectFirstMessage = document.getElementById("options").value = active.value
+    
     localStorage.setItem("ActiveOptionsFirstMEssage", selectFirstMessage)
 
     console.log(selectFirstMessage);
