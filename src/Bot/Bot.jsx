@@ -95,6 +95,8 @@ const Bottw = () => {
       getMessagesJSON.push(strin)
       sessionStorage.setItem("messages", JSON.stringify(getMessagesJSON))
 
+      document.title = tags["display-name"]
+
 
       if (localStorage.getItem(tags["display-name"])) {
         // console.log(message);
