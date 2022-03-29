@@ -2,8 +2,6 @@ import s from "./LinksFromChat.module.scss";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import prettier from "prettier";
-
 const LinksFromChat = () => {
   // const [messagesSession, setMessagesSession] = useState(sessionStorage.getItem("messages"))
 
