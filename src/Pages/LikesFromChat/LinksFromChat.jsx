@@ -14,7 +14,7 @@ const LinksFromChat = () => {
       <div key={uuidv4()} className={s.chatLine}>
         <div className={s.nickname}> {m.nickname.toUpperCase()} </div>
         <div className={s.date}> ({m.date}) </div>
-        <div className={s.message}> <a target="_blank" href={`${m.message}`}>{m.message}</a></div>
+        <div className={s.message}> <a className={s.message} target="_blank" href={`${m.message}`}>{m.message}</a></div>
 
         {/* <div className={s.message}>{" "} <a href={`${m.message}`}></a> {m.message} </div> */}
       </div>
