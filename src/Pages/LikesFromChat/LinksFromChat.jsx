@@ -30,7 +30,10 @@ const LinksFromChat = () => {
         {/* <div>{urlify(s.message)}</div> */}
         {/* <div className={s.message}> {urlify(m.message)} </div> */}
 
-        <div className={s.message} ><a className={s.message} target="_blank" href={detectURLs(m.message)}> {m.message} </a>  </div>
+        {detectURLs(m.message)? <div className={s.message}><a className={s.message} target="_blank" href={detectURLs(m.message)}>{m.message}</a></div> : <div className={s.message}>{m.message}</div> }
+
+
+        
         
         
         {/* <div>{s.message}</div> */}
