@@ -218,6 +218,7 @@ function App() {
       <Header />
       <Bot />
       <Clock />
+     
 
       <Routes>
         <Route path="/" to="/followers" element={<SettingsPage />} />
@@ -226,6 +227,7 @@ function App() {
         <Route path="/sound" element={<SoundLibrary />} />
         <Route path="/pomodoro" element={<PomodoroPage />} />
         <Route path="/settings" element={<SettingsPage />} />
+        {/* <Route path="/messages" element={<LinksFromChat />} /> */}
       </Routes>
     </div>
   );

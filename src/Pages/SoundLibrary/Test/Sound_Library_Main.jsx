@@ -8,7 +8,7 @@ const Sound_library_Main = () => {
   const [trackline, setTrackline] = useState(<div>c</div>)
   const [count, setCount] = useState(0)
   const AllTracks = localStorage.getItem("SoundLibrary")
-  const AllTracksJSON = JSON.parse(AllTracks)
+  const AllTracksJSON = JSON.parse(AllTracks).reverse()
 
   const Counter =()=> {setTrackline(count + 1)}
 
@@ -28,7 +28,7 @@ const Sound_library_Main = () => {
 
   return (<>
     {/* <button type="submit" onClick={()=>(setTrackline(trackline = tracks))} >Click</button> */}
-    <div style={{ height: "500px", overflowY: "auto" }}>{tracks}</div>
+    <div >{tracks}</div>
 
   </>);
 

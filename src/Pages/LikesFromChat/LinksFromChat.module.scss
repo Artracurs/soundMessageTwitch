@@ -2,11 +2,11 @@ $border: 1px;
 
 .container {
   position: relative;
-  width: 1000px;
+  width: 900px;
   text-align: left;
-  height: 650px;
+  height: 590px;
   margin: 0 auto;
-  background-color: rgba(189, 189, 189, 0.1);
+  background-color: rgba(189, 189, 189, 0);
   padding: 10px 20px 10px 20px;
   border-radius: 35px;
 
@@ -22,7 +22,7 @@ $border: 1px;
     margin: 10px 0 10px 0;
     gap: 10px;
     border-radius: 5px;
-    height: 600px;
+    height: 570px;
     overflow-y: auto;
 
   }

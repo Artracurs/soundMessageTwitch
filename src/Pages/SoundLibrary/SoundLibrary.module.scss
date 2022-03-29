@@ -11,6 +11,9 @@ $border: 1px;
     margin: 10px 0 10px 0;
     gap: 10px;
     border-radius: 5px;
+    height: 570px;
+    overflow-y: auto;
+
     
     button {
       background: rgba($color: #bdbdbd, $alpha: 0.1);
@@ -21,6 +24,9 @@ $border: 1px;
       border: 1px solid rgba($color: rgb(102, 29, 74), $alpha: 0.1);
       border-radius: 5px;
     }
+  }
+  .main::-webkit-scrollbar {
+    width: 0;
   }
 
   footer {
