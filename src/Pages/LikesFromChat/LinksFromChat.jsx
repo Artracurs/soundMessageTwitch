@@ -13,12 +13,12 @@ const LinksFromChat = () => {
     return domain.host
   }
 
-  function nickNameColor(nick){
-    let getNick = localStorage.getItem(nick)
-    if (getNick){}
-    let result = "#4385a8"
-    return result
-  }
+  // function nickNameColor(nick){
+  //   let getNick = localStorage.getItem(nick)
+  //   if (getNick){}
+  //   let result = "#4385a8"
+  //   return result
+  // }
 
 
 
@@ -38,7 +38,7 @@ const LinksFromChat = () => {
 
 
 
-        <div style={{color: `#${m.color}`}} className={s.nickname}> {m.nickname.toUpperCase()} </div>
+        <div style={{color: `${m.color}`}} className={s.nickname}> {m.nickname.toUpperCase()} </div>
         <div className={s.date}> ({m.date}) </div>
 
         {/* <div className={s.message}> <a className={s.message} target="_blank" href={`${m.message}`}>{m.message}</a></div> */}
