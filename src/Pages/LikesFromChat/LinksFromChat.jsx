@@ -7,16 +7,10 @@ const LinksFromChat = () => {
   // const [messagesSession, setMessagesSession] = useState(sessionStorage.getItem("messages"))
 
 
-
-
   function GetDomain(url){
     let domain = (new URL(url));
     return domain.host
   }
-
-  // console.log( GetDomain("https://www.youtube.com/watch?v=ptLPr2uCzpA") )
-
-
 
 
   const messagesSession = sessionStorage.getItem("messages");
