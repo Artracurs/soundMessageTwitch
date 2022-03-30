@@ -49,28 +49,47 @@ $border: 1px;
   background: rgba(128, 128, 128, 0.192);
   padding: 15px;
   border-radius: 15px;
-
-
 }
 
 .nickname {
   text-align: center;
   font-size: 16px;
   color: orange;
-
-
 }
 
 .date {
   text-align: center;
   color: gray;
-
+  font-size: 14px;
 }
 
 .message {
   text-align: center;
   padding: 5px;
   font-size: 18px;
+}
+
+.link{
+  background-color: rgb(20, 6, 6);
+  padding: 5px;
+  text-decoration: none;
+  color: rgb(78, 78, 78);
+  border-radius: 10px;
+  width: 150px;
+  text-align: center;
+  margin-top: 0 auto;
+
+  // -webkit-appearance: button;
+  // -moz-appearance: button;
+  appearance: button;
+
   // text-decoration: none;
-  // color: white;
+  // color: initial;
+}
+
+.linkText {
+  color: rgb(110, 110, 110);
+  margin: 6px auto -10px auto;
+  font-size: 14px;
+  text-align: center;
 }

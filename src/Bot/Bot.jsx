@@ -78,25 +78,47 @@ export const Disconnect = () => {
 const Bottw = () => {
 
 
+  function detectURLs(message) {
+    let urlRegex = /(((https?:\/\/)|(www\.))[^\s]+)/g;
+    return message.match(urlRegex)
+  }
+
+  function MessageWithoutUrl(text) {
+    let link = detectURLs(text)
+    let str = text
+    let ds = str.split(" ")
+    for (let i = 0; i < ds.length; i++) {
+      try {
+        if (ds[i] === link[0]) {
+          let strCopy = ds
+          delete strCopy[i]
+          let gg = strCopy.join(" ")
+          console.log(gg);
+          return gg
+        }
+      }
+      catch {
+        return text
+      }
+    }
+  }
 
 
   const [msg, setMsg] = useState(0)
 
   useEffect(() => {
     bot.on("message", (channel, tags, message, self) => {
-      
+
       let time = new Date();
       let date2 = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
-
       let data = { Date: date2, stdSound: "Follower" };
       let ffd = document.getElementById("muter");
-
 
       let getMessages = sessionStorage.getItem("messages")
       let getMessagesJSON = JSON.parse(getMessages)
 
-      let strin = {date: `${date2}`, nickname: `${tags["display-name"]}`, message: `${message}`}
-  
+      let strin = { date: `${date2}`, nickname: `${tags["display-name"]}`, message: `${MessageWithoutUrl(message)}`, url: `${detectURLs(message)}` }
+
       getMessagesJSON.push(strin)
       sessionStorage.setItem("messages", JSON.stringify(getMessagesJSON))
 
