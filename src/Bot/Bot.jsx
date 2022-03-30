@@ -104,6 +104,40 @@ const Bottw = () => {
   }
 
 
+  
+
+  function ColorGen(nick) {
+    try {
+      let getNick = sessionStorage.getItem("messages")
+      let getNickJSON = JSON.parse(getNick)
+
+      if (getNickJSON[0].nickname === nick) {
+       
+        for (let i = 0; i < getNickJSON.length; i++) {
+          if (getNickJSON[i].color !== "undefined") {
+
+            let setColor = getNickJSON[i].color
+
+
+            let getLine = sessionStorage.getItem("messages")
+            let getLineJSON = JSON.parse(getLine)[i]
+
+            let newColor = getLineJSON["color"] = setColor
+
+            sessionStorage.setItem("messages", JSON.stringify(newColor))
+            console.log(setColor);
+            return setColor
+          }
+        }
+      } else {
+        return "fff"
+      }
+    } catch {
+      return Math.floor(Math.random() * 16777215).toString(16)
+    }
+  }
+
+
   const [msg, setMsg] = useState(0)
 
   useEffect(() => {
@@ -117,7 +151,7 @@ const Bottw = () => {
       let getMessages = sessionStorage.getItem("messages")
       let getMessagesJSON = JSON.parse(getMessages)
 
-      let strin = { date: `${date2}`, nickname: `${tags["display-name"]}`, message: `${MessageWithoutUrl(message)}`, url: `${detectURLs(message)}` }
+      let strin = { date: `${date2}`, nickname: `${tags["display-name"]}`, message: `${MessageWithoutUrl(message)}`, url: `${detectURLs(message)}`, color: `${ColorGen(tags["display-name"])}` }
 
       getMessagesJSON.push(strin)
       sessionStorage.setItem("messages", JSON.stringify(getMessagesJSON))

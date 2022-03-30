@@ -3,14 +3,23 @@ import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import st from "./Button_effect.module.scss"
 
+
 const LinksFromChat = () => {
   // const [messagesSession, setMessagesSession] = useState(sessionStorage.getItem("messages"))
 
 
-  function GetDomain(url){
+  function GetDomain(url) {
     let domain = (new URL(url));
     return domain.host
   }
+
+  function nickNameColor(nick){
+    let getNick = localStorage.getItem(nick)
+    if (getNick){}
+    let result = "#4385a8"
+    return result
+  }
+
 
 
   const messagesSession = sessionStorage.getItem("messages");
@@ -21,7 +30,15 @@ const LinksFromChat = () => {
 
     return (
       <div key={uuidv4()} className={s.chatLine}>
-        <div className={s.nickname}> {m.nickname.toUpperCase()} </div>
+        {/* {m.url === "null"?         <div className={s.codeSandBoxButtonContainer}> 
+        <button className={s.codeSandBoxButton}> 
+        <img className={s.codeSandBoxButtonImage} src="https://ci.codesandbox.io/static/favicon.ico" title="Send code from message to Codesandbox.io" /></button></div> : <></>}
+ */}
+
+
+
+
+        <div style={{color: `#${m.color}`}} className={s.nickname}> {m.nickname.toUpperCase()} </div>
         <div className={s.date}> ({m.date}) </div>
 
         {/* <div className={s.message}> <a className={s.message} target="_blank" href={`${m.message}`}>{m.message}</a></div> */}
@@ -42,13 +59,24 @@ const LinksFromChat = () => {
         </div>
         }
 
-
-
-
-
       </div>
     );
   });
+
+  const [value, setValue] = useState("")
+
+  useEffect(() =>{
+    async function init() {
+      const data = await sessionStorage.getItem("messages")
+      setValue(JSON.parse(data))
+
+    }
+    init()
+  }, [])
+
+
+
+
 
   return (
     <div className={s.container}>
