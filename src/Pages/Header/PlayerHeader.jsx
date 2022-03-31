@@ -34,7 +34,7 @@ const PlayerHeader = (props) => {
   return (
     <div className={s.container}>
       <label id="volumeLabelHeader" className={s.volmValue}  value="volume"></label>
-      <Slider id="ranger" defaultValue={localStorage.getItem("volume")} aria-label="Default" valueLabelDisplay="auto" onChange={(event) => {
+      <Slider id="ranger" aria-label="Default" valueLabelDisplay="auto" onChange={(event) => {
           setRangeval(event.target.value);
           localStorage.setItem("volume", rangeval);
         }} />
