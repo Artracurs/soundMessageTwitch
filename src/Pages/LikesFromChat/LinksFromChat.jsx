@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 import st from "./Button_effect.module.scss"
 
 
+
+
 const LinksFromChat = () => {
   // const [messagesSession, setMessagesSession] = useState(sessionStorage.getItem("messages"))
 
@@ -21,10 +23,10 @@ const LinksFromChat = () => {
   // }
 
 
-
   const messagesSession = sessionStorage.getItem("messages");
   let messages = JSON.parse(sessionStorage.getItem("messages"));
   messages.reverse();
+
 
   let chatList = messages.map((m) => {
 
@@ -34,8 +36,6 @@ const LinksFromChat = () => {
         <button className={s.codeSandBoxButton}> 
         <img className={s.codeSandBoxButtonImage} src="https://ci.codesandbox.io/static/favicon.ico" title="Send code from message to Codesandbox.io" /></button></div> : <></>}
  */}
-
-
 
 
         <div style={{color: `${m.color}`}} className={s.nickname}> {m.nickname.toUpperCase()} </div>
