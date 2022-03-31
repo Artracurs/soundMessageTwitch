@@ -17,6 +17,7 @@ import AddTrackButton from "./Pages/SoundLibrary/Test/AddTrackButton";
 import ButtonDelateTrack from "./Pages/SoundLibrary/Test/ButtonDelateTrack";
 import FollowersPage from "./Pages/Followers/FollowersPage";
 import { useEffect } from "react";
+import twitchLogo from './Pages/twitchLogo.png'
 
 const soundList = [
   {
@@ -207,10 +208,10 @@ function App() {
         <div className={s.headerText}>
           <img
             className={s.twitchLogo}
-            src="https://cdn-icons-png.flaticon.com/512/5968/5968819.png"
+            src={twitchLogo}
             alt="logo"
           />
-          Twitch Sound Alerts
+         <span style={{fontFamily: "Verdana", fontSize: "26px"}}>Twitch Sound Alerts</span> 
         </div>
       </div>
 

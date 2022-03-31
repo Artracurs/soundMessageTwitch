@@ -15,14 +15,14 @@ export const PlayAudioFile = (props) => {
 
 
   const PlayByID = () => {
-    audio.volume = 0.5
+    audio.volume = localStorage.getItem("volume")/100
     audio.play()
     document.getElementById(props.url).style.background = "#0d6dfd"
   }
 
 
   const TrackDuration = () => {
-    document.getElementById(props.url).style.background = "#0a6dfd"
+    document.getElementById(props.url).style.background = "#01beff"
     document.getElementById(props.url).innerHTML = `${audio.duration.toFixed(2)} | sec`
   }
   const ResetDuration = () => {

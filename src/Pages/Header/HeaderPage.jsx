@@ -82,7 +82,7 @@ const Header = () => {
 
   useEffect(() =>{
     if (localStorage.getItem("ConectionStatus") === "Connected") {
-      document.getElementById("settingChannelButton").style.color = "orange"
+      document.getElementById("settingChannelButton").style.color = "rgb(1, 190, 255)"
       // document.getElementById("connectionsStatus").style.color = "orange"
     }
     if (localStorage.getItem("ConectionStatus") === "Disconnected") {

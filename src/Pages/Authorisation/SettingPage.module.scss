@@ -1,24 +1,25 @@
 .container {
   color: white;
   margin: 100px auto 0 auto;
-  max-width: 600px;
-  // background: rgb(33, 37, 41);
-  padding: 20px 60px 20px 4px;
-  // border-radius: 5px;
+  max-width: 550px;
+  background: rgb(33, 37, 41);
+  // padding: 20px 60px 20px 4px;
+  border-radius: 25px;
   // box-shadow: 0px 0px 30px 13px #ff006a27;
   // border: 1px solid #ff006a49;
   // background: linear-gradient(to right, rgb(119, 0, 255), orange);
-
+  background: rgba(22, 22, 22, 0.407);
+  backdrop-filter:blur(20px) brightness(110%);
   padding: 1rem;
   color: white;
-  border-width: 3px;
-  border-style: solid;
-  border-image: 
-    linear-gradient(
-      to bottom, 
-      rgb(140, 0, 255),
-      rgba(0, 0, 0, 0)
-    ) 1 100%;
+  // border-width: 3px;
+  // border-style: solid;
+  // border-image: 
+  //   linear-gradient(
+  //     to bottom, 
+  //     rgb(140, 0, 255),
+  //     rgba(0, 0, 0, 0)
+  //   ) 1 100%;
  
 }
 
@@ -48,5 +49,5 @@ h6 {
 .scontainer {
   margin: 0 auto;
   width: 400px;
-  padding: 6px 0 60px 0; 
+  padding: 6px 0 20px 0; 
 }

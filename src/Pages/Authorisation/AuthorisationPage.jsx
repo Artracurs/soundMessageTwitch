@@ -22,7 +22,7 @@ const SettingsPage = (props) => {
 
   useEffect(() =>{
     if (localStorage.getItem("ConectionStatus") === "Connected") {
-      document.getElementById("connectionsStatus").style.color = "orange"
+      document.getElementById("connectionsStatus").style.color = "#01beff"
     }
     if (localStorage.getItem("ConectionStatus") === "Disconnected") {
       document.getElementById("connectionsStatus").style.color = "red"
@@ -31,6 +31,7 @@ const SettingsPage = (props) => {
 
   return (<div className={s.container}>
     <div className={s.scontainer}>
+    <h4>Authorisation</h4>
       <Form>
         <Form.Group className="mb-3">
           <Form.Label>Channel Name</Form.Label>
