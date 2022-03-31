@@ -4,25 +4,32 @@
   
 }
 
+.headerContainer{
+  // background-color: rgb(29, 29, 29);
+  background: rgba(22, 22, 22, 0.407);
+  backdrop-filter:blur(20px) brightness(110%);
+}
+
 .active {
   margin: 5px;
   text-decoration: none;
-  color: #0d6dfd;
-  background: rgb(255, 255, 255);
+  color: white;
+  background: linear-gradient(to right, rgb(119, 0, 255), #01beff);
   padding: 0 15px 0 15px;
   height: 35px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px 1px #ff000088;
+  border-radius: 25px;
+  // box-shadow: 0px 0px 10px 1px #ff000088;
   line-height: 35px;
 }
 
 .link {
-  border-radius: 5px;
+  border-radius: 25px;
   margin: 5px;
   height: 35px;
   text-decoration: none;
   color: rgb(255, 255, 255);
-  background: #0d6dfd;
+  // background: linear-gradient(to right, rgb(119, 0, 255), #01beff);
+  background: rgb(58, 58, 58);
   padding: 0 15px 0 15px;
   line-height: 35px;
 
@@ -38,24 +45,21 @@
 
 .link:hover
 {
-  -webkit-transform: scale(1.3);
-  -ms-transform: scale(1.5);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
   transform: scale(1.1);
   color: rgb(255, 255, 255);
-  filter: blur(0px);
-  box-shadow: 0px 0px 10px 1px #ff000088;
-  // border: 1px solid #cf86b9;
-  background: linear-gradient(to right, rgb(119, 0, 255), orange);
+  // background: linear-gradient(to right,  #01beff, rgb(119, 0, 255));
 }
 
 .underline {
   width: 100%;
   height: 4px;
   // background: linear-gradient(to right, rgb(119, 0, 255), orange);
-  box-shadow: 0px 0px 10px 1px #ff000088;
+  // box-shadow: 0px 0px 10px 1px #ff000088;
 
   animation: gradient 10s ease infinite;
-  background: linear-gradient(-45deg, orange, #e73c7e, rgb(119, 0, 255), #23d5ab);
+  background: linear-gradient(-45deg, rgb(119, 0, 255), #fe1457, rgb(119, 0, 255), #fe1457);
 	background-size: 400% 400%;
 }
 
@@ -70,14 +74,41 @@
 		background-position: 0% 50%;
 	}
 }
-
+$wi: 135px;
 .headerButtons {
   display: grid;
-  grid-template-columns: 110px 155px 144px 1fr 160px 3fr;
+  grid-template-columns: $wi $wi $wi $wi $wi $wi 60px;
 }
 
 .channelNameText {
   font-size: 20px;
-  margin: 0 20px 0 20px;
+  margin: 0 -25px 0 -25px;
+  // color: #ffffff;
+
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%,-50%);
+  padding: 12px 48px;
   color: #ffffff;
+  background: linear-gradient(to right, #4d4d4d 0, rgb(255, 255, 255) 10%, #4d4d4d 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  // font-weight: 600;
+  // font-size: 16px;
+  // text-decoration: none;
+  // white-space: nowrap;
+}
+
+@keyframes shine {
+  0% 
+    {background-position: 0}
+  60%
+    {background-position: 180px}
+  100%
+    {background-position: 180px}
 }

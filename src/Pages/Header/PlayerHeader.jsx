@@ -25,7 +25,6 @@ const PlayerHeader = (props) => {
   }
 
   useEffect(() => {
-
     document.getElementById("ranger").defaultValue = localStorage.getItem("volume")
   })
 

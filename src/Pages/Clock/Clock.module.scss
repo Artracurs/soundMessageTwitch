@@ -1,3 +1,10 @@
 .clock {
   margin: 20px 0 20px 0;
+  background: rgba(22, 22, 22, 0.61);
+  backdrop-filter:blur(20px) brightness(110%);
+  width: 1200px;
+  margin: 5px auto 0 auto;
+  padding: 10px;
+  font-size: 20px;
+  color: rgb(150, 150, 150);
 }

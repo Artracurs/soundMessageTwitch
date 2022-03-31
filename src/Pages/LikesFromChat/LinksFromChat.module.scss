@@ -9,6 +9,7 @@ $border: 1px;
   background-color: rgba(189, 189, 189, 0);
   padding: 10px 20px 10px 20px;
   border-radius: 35px;
+  
 
   h4 {
     color: white;
@@ -18,11 +19,12 @@ $border: 1px;
   .main {
     display: grid;
     grid-template-columns: 1fr;
-    margin: 10px 0 10px 0;
-    gap: 10px;
+    margin: 6px 0 6px 0;
+    gap: 5px;
     border-radius: 5px;
     height: 570px;
     overflow-y: auto;
+   
   }
   .main::-webkit-scrollbar {
     width: 0;
@@ -39,12 +41,24 @@ $border: 1px;
   }
 }
 
-.chatLine {
-  margin-bottom: 20px;
+.headerLink {
+  display: grid;
+  grid-template-columns: 85px 1fr 10fr;
+  text-align: left;
+}
+
+.footerLink {
   display: grid;
   grid-template-columns: 1fr;
-  background: rgba(128, 128, 128, 0.192);
-  padding: 15px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.chatLine {
+  margin-bottom: 5px;
+  backdrop-filter:blur(20px) brightness(110%);
+  background: rgba(22, 22, 22, 0.307);
+  padding: 10px;
   border-radius: 15px;
 }
 

@@ -21,6 +21,8 @@
     text-align: center;
     margin: 3px 0 0 0;
     border: 10px;
+    background: rgba(22, 22, 22, 0.407);
+    backdrop-filter:blur(20px) brightness(110%);
     
   }
   .lineContainer:hover {

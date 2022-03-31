@@ -93,14 +93,16 @@ const Header = () => {
 
   return (
     <div className={st.container}>
-      <Navbar bg="dark" variant="dark">
+
+      <Navbar className={st.headerContainer} variant="dark">
           <div className={st.channelNameText} to="home">@{headerChannelName}</div>
           <div className={st.headerButtons}>
-            <NavLink className={setActive} to="followers">Followers</NavLink>
-            <NavLink className={setActive} to="chat">Links from Chat</NavLink>
-            <NavLink className={setActive} to="sound">Sound Library</NavLink>
-            <NavLink className={setActive} to="pomodoro">Pomodoro</NavLink>
-            <NavLink className={setActive} to="settings">{<span id="settingChannelButton">●  </span>}Authorisation</NavLink>
+            <NavLink className={setActive} to="followers">ALERT</NavLink>
+            <NavLink className={setActive} to="chat">CHAT</NavLink>
+            <NavLink className={setActive} to="sound">SOUNDS</NavLink>
+            <NavLink className={setActive} to="pomodoro">POMODORO</NavLink>
+            <NavLink className={setActive} to="home">STYLE</NavLink>
+            <NavLink className={setActive} to="settings">{<span id="settingChannelButton">●  </span>}LOGIN</NavLink>
             <div ></div>
           </div>
           <Form className={st.volumeController}>

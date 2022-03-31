@@ -4,6 +4,7 @@ $border: 1px;
   position: relative;
   width: 1150px;
   margin: 0 auto;
+  
 
   .main {
     display: grid;
@@ -13,7 +14,7 @@ $border: 1px;
     border-radius: 5px;
     height: 570px;
     overflow-y: auto;
-
+    
     
     button {
       background: rgba($color: #bdbdbd, $alpha: 0.1);
