@@ -36,8 +36,8 @@ const StylePage = () => {
   // })
 
   return (<div className={s.container}>
-    <h1>Restyle page</h1>
-    <br />
+    <h4>Restyle page</h4>
+   
     <button type='submit' className={s.button} onClick={StyleGen}> Random Background </button>
     <RangePage  mainvalue={20}/>
   </div>);

@@ -205,9 +205,13 @@ function App() {
 
   if (localStorage.getItem("style") === null){
     localStorage.setItem("style", JSON.stringify("https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1934&q=80"))
+    localStorage.setItem("red", 0)
+    localStorage.setItem("green", 75)
+    localStorage.setItem("blue", 146)
+    localStorage.setItem("alpha", 0.425)
   }
 
-  const style = `radial-gradient(rgba(0, 75, 146, 0.425), rgba(0, 18, 53, 0.863)),
+  const style = `radial-gradient(rgba(${localStorage.getItem("red")},  ${localStorage.getItem("green")},  ${localStorage.getItem("blue")}, ${localStorage.getItem("alpha")}), rgba(0, 18, 53, 0.863)),
   url(${localStorage.getItem("style")})`
   document.body.style.backgroundImage = style
 
