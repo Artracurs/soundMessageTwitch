@@ -188,8 +188,8 @@ function App() {
   useEffect(() => {
     if (localStorage.getItem("ConectionStatus") === "Connected") {
       try {
-        document.getElementById("settingChannelButton").style.color = "orange"
-        document.getElementById("connectionsStatus").style.color = "orange";
+        document.getElementById("settingChannelButton").style.color = "#01beff"
+        document.getElementById("connectionsStatus").style.color = "#01beff";
         document.getElementById("connectionsStatus").innerHTML = "Connected";
       } catch {}
     }
