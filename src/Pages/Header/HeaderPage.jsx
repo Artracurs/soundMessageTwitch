@@ -29,7 +29,7 @@ const Header = () => {
       localStorage.setItem("volumeStatus", 0)
     }
     let ff = document.getElementById("muter")
-    if (ff.checked === true){
+    if (ff.checked === true) {
       localStorage.setItem("volume", getOldVol)
       document.getElementById("ranger").disabled = false
       ToggleSound()
@@ -40,7 +40,7 @@ const Header = () => {
       localStorage.setItem("volume", 0)
       muteLabel.innerText = "Not Active"
       console.log("LOG >>> Global Sound Off")
-    } 
+    }
   }
 
 
@@ -52,7 +52,7 @@ const Header = () => {
   let ff = document.getElementById("muter")
 
   // const Mute = () => {
-    
+
   // }
 
   // useEffect(() => {
@@ -80,7 +80,7 @@ const Header = () => {
   //   }
   // })
 
-  useEffect(() =>{
+  useEffect(() => {
     if (localStorage.getItem("ConectionStatus") === "Connected") {
       document.getElementById("settingChannelButton").style.color = "rgb(1, 190, 255)"
       // document.getElementById("connectionsStatus").style.color = "orange"
@@ -91,26 +91,27 @@ const Header = () => {
     }
   })
 
+
   return (
     <div className={st.container}>
 
       <Navbar className={st.headerContainer} variant="dark">
-          <div className={st.channelNameText} to="home">@{headerChannelName}</div>
-          <div className={st.headerButtons}>
-            <NavLink className={setActive} to="followers">ALERT</NavLink>
-            <NavLink className={setActive} to="chat">CHAT</NavLink>
-            <NavLink className={setActive} to="sound">SOUNDS</NavLink>
-            <NavLink className={setActive} to="pomodoro">POMODORO</NavLink>
-            <NavLink className={setActive} to="home">STYLE</NavLink>
-            <NavLink className={setActive} to="settings">{<span id="settingChannelButton">●  </span>}LOGIN</NavLink>
-            <div ></div>
-          </div>
-          <Form className={st.volumeController}>
-            <PlayerHeader />
-            <Form.Check className={st.checker} id="muter" value="" inline onChange={Mute} defaultChecked={false} type="switch" />
-            <span className={st.vlmLabel} value="c" id="muteLabel">Not Active</span>
-          </Form>
-       
+        <div className={st.channelNameText} to="home">@{headerChannelName}</div>
+        <div className={st.headerButtons}>
+          <NavLink className={setActive} to="followers">ALERT</NavLink>
+          <NavLink className={setActive} to="chat">CHAT</NavLink>
+          <NavLink className={setActive} to="sound">SOUNDS</NavLink>
+          <NavLink className={setActive} to="pomodoro">POMODORO</NavLink>
+          <NavLink className={setActive} to="style">STYLE</NavLink>
+          <NavLink className={setActive} to="settings">{<span id="settingChannelButton">●  </span>}LOGIN</NavLink>
+          <div ></div>
+        </div>
+        <Form className={st.volumeController}>
+          <PlayerHeader />
+          <Form.Check className={st.checker} id="muter" value="" inline onChange={Mute} defaultChecked={false} type="switch" />
+          <span className={st.vlmLabel} value="c" id="muteLabel">Not Active</span>
+        </Form>
+
       </Navbar>
       <div className={st.underline}></div>
     </div>

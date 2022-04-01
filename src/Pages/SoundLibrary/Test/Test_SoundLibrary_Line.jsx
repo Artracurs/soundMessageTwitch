@@ -27,7 +27,7 @@ const Test_SoundLibrary = () => {
       <button  className={s.id} onClick={Clear}>CLEAR</button>
     </div>
     <br />
-    <h4>Sounds List</h4>
+    <h4>Sound List</h4>
     {/* <Test_Show_lines /> */}
     <Sound_library_Main />
   </div>)

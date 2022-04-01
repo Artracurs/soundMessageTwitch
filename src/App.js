@@ -18,6 +18,7 @@ import ButtonDelateTrack from "./Pages/SoundLibrary/Test/ButtonDelateTrack";
 import FollowersPage from "./Pages/Followers/FollowersPage";
 import { useEffect } from "react";
 import twitchLogo from './Pages/twitchLogo.png'
+import StylePage from "./Pages/StylePage/StylePage";
 
 const soundList = [
   {
@@ -202,6 +203,15 @@ function App() {
     }
   });
 
+  if (localStorage.getItem("style") === null){
+    localStorage.setItem("style", JSON.stringify("https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1934&q=80"))
+  }
+
+  const style = `radial-gradient(rgba(0, 75, 146, 0.425), rgba(0, 18, 53, 0.863)),
+  url(${localStorage.getItem("style")})`
+  document.body.style.backgroundImage = style
+
+
   return (
     <div className="App">
       <div className={s.logoHeader}>
@@ -219,7 +229,8 @@ function App() {
       <Header />
       <Bot />
       <Clock />
-     
+
+    
 
       <Routes>
         <Route path="/" to="/followers" element={<SettingsPage />} />
@@ -228,6 +239,7 @@ function App() {
         <Route path="/sound" element={<SoundLibrary />} />
         <Route path="/pomodoro" element={<PomodoroPage />} />
         <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/style" element={<StylePage />} />
         {/* <Route path="/messages" element={<LinksFromChat />} /> */}
       </Routes>
     </div>

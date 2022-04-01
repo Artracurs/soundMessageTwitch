@@ -1,0 +1,21 @@
+.container {
+  background: rgba(22, 22, 22, 0.407);
+  backdrop-filter:blur(20px) brightness(110%);
+  max-width: 550px;
+  padding: 20px 0 40px 0;
+  margin: 60px auto 0 auto;
+  border-radius: 25px;
+}
+
+.button {
+  border-radius: 25px;
+  width: 350px;
+  background: linear-gradient(to right, rgb(119, 0, 255), #01beff);
+  border: 0px solid #01beff;
+  height: 35px;
+  color: white;
+}
+
+.button::after {
+  background-color: rgb(192, 192, 192);
+}

@@ -1,0 +1,23 @@
+.container {
+
+  padding-top: 30px;
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.oneColorLine {
+  padding-top: 10px;
+  width: 280px;
+  display: grid;
+  grid-template-columns: 1fr 200px 50px;
+  margin: 0 auto;
+  .label {
+    margin-left: 15x;
+    position: relative;
+    bottom: 1px;
+  }
+  .range {
+    cursor: pointer;
+  }
+}
