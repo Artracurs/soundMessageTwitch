@@ -216,6 +216,7 @@ function App() {
   document.body.style.backgroundImage = style
 
 
+  
   return (
     <div className="App">
       <div className={s.logoHeader}>
