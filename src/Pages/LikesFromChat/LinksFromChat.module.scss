@@ -43,7 +43,7 @@ $border: 1px;
 
 .headerLink {
   display: grid;
-  grid-template-columns: 85px 1fr 10fr;
+  grid-template-columns: 80px 1fr 10fr 1fr;
   text-align: left;
 }
 
@@ -55,7 +55,7 @@ $border: 1px;
 }
 
 .chatLine {
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   backdrop-filter:blur(20px) brightness(110%);
   background: rgba(22, 22, 22, 0.407);
   padding: 10px;
@@ -128,4 +128,16 @@ $border: 1px;
 
 .chatLine:hover {
   background: rgba(107, 107, 107, 0.13);
+}
+
+.fovicon {
+  height: 35px;
+  background: rgba(15, 15, 15, 0.13);
+  border-radius: 25px;
+  padding: 5px;
+}
+
+.fovicon:hover {
+  background: #cccccc;
+  height: 40px;
 }

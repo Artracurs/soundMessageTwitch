@@ -1,14 +1,16 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useReducer } from "react";
 import s from "./Bot.module.scss";
 import tmi from "tmi.js";
 import { Sucsess } from "../Pages/Authorisation/AuthorisationPage";
 import uwup from "../AudioPlayer/Audiofiles/uwup.mp3"
+import LinksFromChat from '../Pages/LikesFromChat/LinksFromChat'
+
+
 
 
 let ggJson = "...";
 
 const audioFirstMessage = new Audio(localStorage.getItem("FirstMessageSound"));
-// const audioStandartMessage = new Audio(localStorage.getItem("StandartSound"));
 
 
 const allUsers = [{
@@ -21,20 +23,7 @@ const allUsers = [{
 }]
 
 
-
-// const CreateUser = () =>{
-//   if(GetMessage === true){
-//     localStorage.setItem("AllUsers", allUsers)
-//   }
-// }
-
-
-
-
-
 const listOfAllUsers = allUsers.map(listOfAllUser => allUsers)
-
-
 
 const bot = new tmi.Client({
   options: { debug: false },
@@ -44,7 +33,6 @@ const bot = new tmi.Client({
   },
   channels: [`${localStorage.getItem("ChannelName")}`],
 });
-
 
 
 bot.connect().then(() => {
@@ -65,64 +53,55 @@ bot.connect().then(() => {
     });
 });
 
-
-export const Disconnect = () => {
-
-};
+export const Disconnect = () => { };
 
 
+function detectURLs(message) {
+  let urlRegex = /(((https?:\/\/)|(www\.))[^\s]+)/g;
+  return message.match(urlRegex)
+}
+
+function MessageWithoutUrl(text) {
+  let link = detectURLs(text)
+  let str = text
+  let ds = str.split(" ")
+  for (let i = 0; i < ds.length; i++) {
+    try {
+      if (ds[i] === link[0]) {
+        let strCopy = ds
+        delete strCopy[i]
+        let gg = strCopy.join(" ")
+        console.log(gg);
+        return gg
+      }
+    }
+    catch {
+      return text
+    }
+  }
+}
 
 
-
+const colorGen = () => {
+  return '#'+Math.floor(Math.random() * 16777215).toString(16)
+}
+const userColors = {}
+function writeMessage(user, message) {
+  let color = userColors[user];
+  if (typeof (color) !== 'string') {
+    color = colorGen()
+    userColors[user] = color
+  }
+  return color
+}
 
 const Bottw = () => {
-
-
-  function detectURLs(message) {
-    let urlRegex = /(((https?:\/\/)|(www\.))[^\s]+)/g;
-    return message.match(urlRegex)
-  }
-
-  function MessageWithoutUrl(text) {
-    let link = detectURLs(text)
-    let str = text
-    let ds = str.split(" ")
-    for (let i = 0; i < ds.length; i++) {
-      try {
-        if (ds[i] === link[0]) {
-          let strCopy = ds
-          delete strCopy[i]
-          let gg = strCopy.join(" ")
-          console.log(gg);
-          return gg
-        }
-      }
-      catch {
-        return text
-      }
-    }
-  }
-
-
-  const colorGen = () => {
-    return '#'+Math.floor(Math.random() * 16777215).toString(16)
-  }
-  const userColors = {}
-  function writeMessage(user, message) {
-    let color = userColors[user];
-    if (typeof (color) !== 'string') {
-      color = colorGen()
-      userColors[user] = color
-    }
-    return color
-  }
-
 
   const [msg, setMsg] = useState(0)
 
   useEffect(() => {
     bot.on("message", (channel, tags, message, self) => {
-
+      
       let time = new Date();
       let date2 = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
       let data = { Date: date2, stdSound: "Follower" };
@@ -131,6 +110,8 @@ const Bottw = () => {
       let getMessages = sessionStorage.getItem("messages")
       let getMessagesJSON = JSON.parse(getMessages)
 
+      if (getMessagesJSON.length > 24) getMessagesJSON.shift(-1,1);
+      
       let strin = {
         date: `${date2}`,
         nickname: `${tags["display-name"]}`,
@@ -139,12 +120,9 @@ const Bottw = () => {
         color: `${writeMessage(tags["display-name"], message)}`,
       }
 
-
       getMessagesJSON.push(strin)
       sessionStorage.setItem("messages", JSON.stringify(getMessagesJSON))
-
       document.title = tags["display-name"]
-
 
       if (localStorage.getItem(tags["display-name"])) {
         // console.log(message);

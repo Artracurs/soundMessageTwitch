@@ -218,7 +218,7 @@ function App() {
 
   
   return (
-    <div className="App">
+    <div id="app" className="App">
       <div className={s.logoHeader}>
         <div className={s.headerText}>
           <img
