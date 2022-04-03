@@ -29,18 +29,23 @@ const LinksFromChat = () => {
 
 
   let chatList = messages.map((m) => {
-
+  
     return (
       <div key={uuidv4()} className={s.chatLine}>
         <div className={s.headerLink}>
-          <div className={s.date} style={{fontSize: "14px"}}> ({m.date}) </div>
-          <div style={{ color: `${m.color}`, textAlign: 'center', paddingRight: '10px', fontSize: "14px" }} > {m.nickname.toUpperCase()} </div>
-          <div style={{fontSize: "15px", position: "relative", top: "-1px"}}> {m.message} </div>
-        </div>
-        <div className={s.footerLink}>
-          {m.url === "null" ? <></> : <div className={st.buttonContainer} > <a title={m.url} href={m.url} className={st['btn-flip']} target="_blank" data-back="Open" data-front={GetDomain(m.url)}></a>  </div>   }
+          <div className={s.date} style={{ fontSize: "13px" }}> ({m.date}) </div>
+          <div style={{ color: `${m.color}`, textAlign: 'left', paddingRight: '8px', fontSize: "13px" }} > {m.nickname.toUpperCase()} </div>
+          <div style={{ fontSize: "14px", position: "relative", top: "-1px" }}> {m.message} </div>
+          {/* <div style={{ fontSize: "15px", position: "relative", top: "-1px" }}> {()=>setMsg(actual=> actual)} </div> */}
+           <div className={s.footerLink}>
+          {m.url === "null" ? <></> : <a data-tooltip="tooltip"  target="_blank" title={GetDomain(m.url)} href={m.url}> <img className={s.fovicon} src={`https://s2.googleusercontent.com/s2/favicons?domain_url=${m.url}`} alt={m.url} placeholder={m.url} /> </a>}
+        
         </div>
         
+        </div>
+
+     
+
       </div>
     );
   });
